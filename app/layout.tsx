@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import { CartProvider } from '@/lib/context/CartContext';
+import WhatsAppFloat from '@/components/ui/WhatsAppFloat';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
 const poppins = Poppins({
@@ -69,6 +70,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <WhatsAppFloat />
         </CartProvider>
       </body>
     </html>

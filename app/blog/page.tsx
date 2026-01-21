@@ -5,7 +5,7 @@ import { ArrowRight, BookOpen } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: 'Knowledge Hub & Industry Insights',
-    description: 'Insights on surgical dressing manufacturing, quality standards, and medical textile procurement trends.',
+    description: 'Insights on surgical dressing manufacturing, quality standards, and medical consumable procurement trends.',
 };
 
 const ARTICLES = [
@@ -25,8 +25,8 @@ const ARTICLES = [
     },
     {
         slug: 'cotton-sourcing-rajapalayam',
-        title: 'Why Rajapalayam is the Hub for Medical Textiles',
-        excerpt: 'How regional access to high-grade Shankar-6 cotton enables superior absorbency and fabric strength in medical consumables.',
+        title: 'Why Rajapalayam is the Hub for Surgical Dressings',
+        excerpt: 'How regional access to high-grade Shankar-6 cotton enables superior absorbency and material strength in medical consumables.',
         date: 'December 10, 2025',
         category: 'Supply Chain'
     }

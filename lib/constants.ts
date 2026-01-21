@@ -5,23 +5,27 @@ export const NAV_LINKS = [
     { label: 'Home', href: '/' },
     { label: 'About Us', href: '/about' },
     { label: 'Products', href: '/products' },
-    { label: 'Export', href: '/export' },
     { label: 'Contact', href: '/contact' },
 ];
 
 export const COMPANY_INFO = {
     name: 'Ambika Surgicals',
     address: 'SF No. 234/2A, SIDCO Industrial Estate, Rajapalayam - 626117, Virudhunagar District, Tamil Nadu, India',
-    phone: '+91 4563 227 XXX', // Update with actual number
-    mobile: '+91 98421 XXXXX', // Update with actual number  
-    email: 'sales@ambikasurgicals.com',
+    phone: '+91 90424 28156',
+    mobile: '+91 90424 28156',
+    email: 'ambikasurgicals555@gmail.com',
     website: 'www.ambikasurgicals.com',
     mapUrl: 'https://maps.google.com/?q=Rajapalayam,+Tamil+Nadu',
     // Business Hours
     workingHours: 'Monday - Saturday: 9:00 AM - 6:00 PM',
     establishedYear: '2010', // Adjust as needed
+    // Contact Persons
+    contactPersons: [
+        { name: 'Poorana Chandran', phone: '90424 28156' },
+        { name: 'Ravi Chandran', phone: '+91 95978 78470' },
+    ],
     // Social (optional)
-    whatsapp: '+91 98421 XXXXX', // Update with actual number
+    whatsapp: '+919042428156',
 };
 
 // Trust Indicators

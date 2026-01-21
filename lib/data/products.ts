@@ -63,21 +63,21 @@ export const PRODUCTS: Product[] = [
         slug: 'gamjee-pad-roll',
         name: 'Gamjee Pad/Roll (Sterile & Non Sterile)',
         category: 'sterile-dressing',
-        description: 'Discover our premium dressing pads, made from fine-grade fabric for versatile, disposable surgical use, offering unmatched quality and performance.',
+        description: 'Discover our premium dressing pads, made from medical-grade cotton for versatile, disposable surgical use, offering unmatched quality and performance.',
         shortDescription: 'Versatile disposable dressing pads for surgical use.',
         specs: {
             'Size': '10cm x 2m, 10cm x 3m, 15cm x 2m, 15cm x 3m',
             'GSM': '300, 400, 500',
-            'Material': 'Fine-grade fabric',
+            'Material': 'Medical-grade Cotton',
             'Customization': 'As per your requirement',
             'Sterility': 'Sterile & Non-Sterile available'
         },
         benefits: [
-            'Fine-grade fabric ensures gentle contact with wound sites',
+            'Soft, medical-grade material ensures gentle contact with wound sites',
             'Multiple GSM options for different exudate levels',
             'Disposable design reduces cross-contamination risk'
         ],
-        features: ['Premium fabric quality', 'Multiple size options', 'Customizable GSM'],
+        features: ['Premium material quality', 'Multiple size options', 'Customizable GSM'],
         imageUrl: '/images/products/3. GAMJEE PAD.jpg'
     },
     {

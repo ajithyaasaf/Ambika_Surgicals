@@ -9,6 +9,7 @@ import { useCart } from '@/lib/context/CartContext';
 import { Trash2, ArrowLeft, Send, Minus, Plus } from 'lucide-react';
 // Reusing ContactForm logic but adapted for Quote
 import ContactForm from '@/components/forms/ContactForm';
+import FadeIn, { StaggerContainer, FadeInItem } from '@/components/animations/FadeIn';
 
 export default function InquiryPage() {
     const { items, removeItem, updateQuantity, clearCart } = useCart();
@@ -39,15 +40,17 @@ export default function InquiryPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                     {/* Cart Items */}
                     <div className="lg:col-span-2">
-                        <h1 className="text-3xl font-bold font-heading text-navy mb-6">Request for Quote</h1>
+                        <FadeIn>
+                            <h1 className="text-3xl font-bold font-heading text-navy mb-6">Request for Quote</h1>
+                        </FadeIn>
 
                         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mb-8">
                             <div className="p-6 border-b border-gray-100 bg-gray-50/50">
                                 <h2 className="font-semibold text-navy">Items in your list ({items.length})</h2>
                             </div>
-                            <ul className="divide-y divide-gray-100">
+                            <StaggerContainer as="ul" className="divide-y divide-gray-100">
                                 {items.map((item) => (
-                                    <li key={item.id} className="p-6">
+                                    <FadeInItem as="li" key={item.id} className="p-6">
                                         <div className="flex items-center gap-4">
                                             {/* Product Image */}
                                             <div className="relative w-16 h-16 bg-gray-100 rounded-lg overflow-hidden shrink-0">
@@ -102,9 +105,9 @@ export default function InquiryPage() {
                                                 <Trash2 className="w-5 h-5" />
                                             </button>
                                         </div>
-                                    </li>
+                                    </FadeInItem>
                                 ))}
-                            </ul>
+                            </StaggerContainer>
                             {items.length > 0 && (
                                 <div className="p-4 bg-gray-50 border-t border-gray-100 flex justify-end">
                                     <Button variant="outline" size="sm" onClick={clearCart} className="text-gray-500">
@@ -114,19 +117,22 @@ export default function InquiryPage() {
                             )}
                         </div>
 
-                        <div className="bg-blue-50 border border-blue-100 p-4 rounded-lg text-blue-800 text-sm mb-8">
+                        <FadeIn delay={0.2} className="bg-blue-50 border border-blue-100 p-4 rounded-lg text-blue-800 text-sm mb-8">
                             <strong>Note:</strong> This is a preliminary inquiry. Our team will contact you to discuss specific quantities, packaging requirements, and shipping terms before finalizing the quote.
-                        </div>
+                        </FadeIn>
                     </div>
 
                     {/* Submission Form */}
                     <div className="lg:col-span-1">
-                        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 sticky top-24">
+                        <FadeIn delay={0.3} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 sticky top-24">
                             <h2 className="text-xl font-bold text-navy mb-4">Submit Inquiry</h2>
                             {/* Reuse Contact Form logic or simpler version */}
-                            {/* For simplicity in this demo, we'll just render the ContactForm but realistically it should pre-fill the message with items */}
-                            <ContactForm />
-                        </div>
+                            <ContactForm
+                                isQuoteRequest={true}
+                                productItems={items.map(item => ({ id: item.id, quantity: item.quantity }))}
+                                onSuccess={clearCart}
+                            />
+                        </FadeIn>
                     </div>
                 </div>
             </Container>

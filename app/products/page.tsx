@@ -4,6 +4,7 @@ import ProductCard from '@/components/product/ProductCard';
 import { PRODUCTS, CATEGORIES } from '@/lib/data/products';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import FadeIn, { StaggerContainer, FadeInItem } from '@/components/animations/FadeIn';
 
 export const dynamic = 'force-dynamic';
 
@@ -28,57 +29,61 @@ export default async function ProductsPage({
         <div className="bg-neutral-light min-h-screen py-16">
             <Container>
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
-                    <div>
+                    <FadeIn>
                         <h1 className="text-3xl font-bold font-heading text-navy">Product Catalog</h1>
                         <p className="text-gray-600 mt-2">
-                            {filteredProducts.length} export-grade medical textile products available.
+                            {filteredProducts.length} export-grade surgical dressing products available.
                         </p>
-                    </div>
+                    </FadeIn>
 
                     {/* Category Filter Pills */}
-                    <div className="flex flex-wrap gap-2">
-                        <Link
-                            href="/products"
-                            className={cn(
-                                "px-4 py-2 rounded-full text-sm font-medium transition-colors border",
-                                !selectedCategory
-                                    ? "bg-navy text-white border-navy"
-                                    : "bg-white text-gray-600 border-gray-200 hover:border-navy hover:text-navy"
-                            )}
-                        >
-                            All
-                        </Link>
-                        {CATEGORIES.map(cat => (
+                    <FadeIn delay={0.1}>
+                        <div className="flex flex-wrap gap-2">
                             <Link
-                                key={cat.id}
-                                href={`/products?category=${cat.id}`}
+                                href="/products"
                                 className={cn(
                                     "px-4 py-2 rounded-full text-sm font-medium transition-colors border",
-                                    selectedCategory === cat.id
+                                    !selectedCategory
                                         ? "bg-navy text-white border-navy"
                                         : "bg-white text-gray-600 border-gray-200 hover:border-navy hover:text-navy"
                                 )}
                             >
-                                {cat.label}
+                                All
                             </Link>
-                        ))}
-                    </div>
+                            {CATEGORIES.map(cat => (
+                                <Link
+                                    key={cat.id}
+                                    href={`/products?category=${cat.id}`}
+                                    className={cn(
+                                        "px-4 py-2 rounded-full text-sm font-medium transition-colors border",
+                                        selectedCategory === cat.id
+                                            ? "bg-navy text-white border-navy"
+                                            : "bg-white text-gray-600 border-gray-200 hover:border-navy hover:text-navy"
+                                    )}
+                                >
+                                    {cat.label}
+                                </Link>
+                            ))}
+                        </div>
+                    </FadeIn>
                 </div>
 
                 {/* Product Grid */}
                 {filteredProducts.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                         {filteredProducts.map(product => (
-                            <ProductCard key={product.id} product={product} />
+                            <FadeInItem key={product.id}>
+                                <ProductCard product={product} />
+                            </FadeInItem>
                         ))}
-                    </div>
+                    </StaggerContainer>
                 ) : (
-                    <div className="text-center py-20 bg-white rounded-lg shadow-sm">
+                    <FadeIn className="text-center py-20 bg-white rounded-lg shadow-sm">
                         <p className="text-gray-500 text-lg">No products found in this category.</p>
                         <Link href="/products" className="text-primary font-semibold hover:underline mt-2 inline-block">
                             View all products
                         </Link>
-                    </div>
+                    </FadeIn>
                 )}
             </Container>
         </div>

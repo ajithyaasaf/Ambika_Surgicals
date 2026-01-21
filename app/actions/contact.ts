@@ -1,6 +1,8 @@
 'use server';
 
 import { contactFormSchema, type ActionResponse } from '@/lib/validations';
+import { db } from '@/lib/firebase/config';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 /**
  * Server Action for Contact Form Submission
@@ -22,6 +24,14 @@ export async function submitContactForm(formData: FormData): Promise<ActionRespo
 
         // Validate using Zod
         const validatedData = contactFormSchema.parse(rawData);
+
+        // Store in Firestore
+        await addDoc(collection(db, 'contact_submissions'), {
+            ...validatedData,
+            timestamp: serverTimestamp(),
+            status: 'new', // new, read, replied
+            type: 'contact',
+        });
 
         // TODO: In production, implement email sending
         // Example with Resend:
@@ -63,11 +73,11 @@ export async function submitContactForm(formData: FormData): Promise<ActionRespo
 
 /**
  * Server Action for Quote/Inquiry Submission
- * Handles bulk quote requests with product list
+ * Handles bulk quote requests with product list and quantities
  */
 export async function submitQuoteRequest(
     formData: FormData,
-    productIds: string[]
+    productItems: Array<{ id: string; quantity: number }>
 ): Promise<ActionResponse> {
     try {
         const rawData = {
@@ -80,8 +90,17 @@ export async function submitQuoteRequest(
 
         const validatedData = contactFormSchema.parse(rawData);
 
+        // Store in Firestore
+        await addDoc(collection(db, 'contact_submissions'), {
+            ...validatedData,
+            products: productItems, // Now includes { id, quantity }
+            timestamp: serverTimestamp(),
+            status: 'new',
+            type: 'quote',
+        });
+
         // TODO: Send email with product list
-        console.log('Quote Request:', { ...validatedData, products: productIds });
+        console.log('Quote Request:', { ...validatedData, products: productItems });
 
         await new Promise((resolve) => setTimeout(resolve, 1000));
 

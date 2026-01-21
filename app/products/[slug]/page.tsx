@@ -11,6 +11,7 @@ import { AddToQuoteButton } from '@/components/product/AddToQuoteButton';
 import ProductCard from '@/components/product/ProductCard';
 import { getRelatedProducts, generateBreadcrumbSchema } from '@/lib/product-utils';
 import { cn } from '@/lib/utils';
+import FadeIn, { StaggerContainer, FadeInItem } from '@/components/animations/FadeIn';
 
 interface Props {
     params: { slug: string };
@@ -114,7 +115,7 @@ export default async function ProductDetailPage({ params }: Props) {
                 <Container>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
                         {/* Product Image */}
-                        <div className="space-y-6">
+                        <FadeIn className="space-y-6">
                             <div className="aspect-square bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-2 border-gray-200 relative overflow-hidden">
                                 <Image
                                     src={product.imageUrl}
@@ -141,30 +142,30 @@ export default async function ProductDetailPage({ params }: Props) {
                                     <p className="text-xs font-semibold text-orange-900">Fast Delivery</p>
                                 </div>
                             </div>
-                        </div>
+                        </FadeIn>
 
                         {/* Product Info */}
                         <div className="space-y-8">
                             {/* Category Badge */}
-                            <div>
+                            <FadeIn delay={0.1}>
                                 <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-bold rounded-full uppercase tracking-wider border border-primary/20">
                                     {product.category.replace('-', ' ')}
                                 </span>
-                            </div>
+                            </FadeIn>
 
                             {/* Product Name */}
-                            <div>
+                            <FadeIn delay={0.2}>
                                 <h1 className="text-4xl md:text-5xl font-bold font-heading text-navy mb-4 leading-tight">
                                     {product.name}
                                 </h1>
                                 <p className="text-xl text-gray-600 leading-relaxed">
                                     {product.description}
                                 </p>
-                            </div>
+                            </FadeIn>
 
                             {/* Key Features */}
                             {product.features.length > 0 && (
-                                <div className="bg-blue-50/50 border border-blue-100 rounded-xl p-6">
+                                <FadeIn delay={0.3} className="bg-blue-50/50 border border-blue-100 rounded-xl p-6">
                                     <h3 className="text-sm font-bold text-navy uppercase tracking-wider mb-4">
                                         Key Features
                                     </h3>
@@ -178,11 +179,11 @@ export default async function ProductDetailPage({ params }: Props) {
                                             </li>
                                         ))}
                                     </ul>
-                                </div>
+                                </FadeIn>
                             )}
 
                             {/* CTAs */}
-                            <div className="flex flex-col sm:flex-row gap-4">
+                            <FadeIn delay={0.4} className="flex flex-col sm:flex-row gap-4">
                                 <AddToQuoteButton product={product} />
                                 <Link
                                     href="/contact"
@@ -190,12 +191,14 @@ export default async function ProductDetailPage({ params }: Props) {
                                 >
                                     Custom Requirement?
                                 </Link>
-                            </div>
+                            </FadeIn>
 
                             {/* Note */}
-                            <p className="text-sm text-gray-500 border-l-4 border-primary pl-4 py-2">
-                                <strong>Note:</strong> Minimum Order Quantity applies for bulk/export orders. Contact us for detailed pricing.
-                            </p>
+                            <FadeIn delay={0.5}>
+                                <p className="text-sm text-gray-500 border-l-4 border-primary pl-4 py-2">
+                                    <strong>Note:</strong> Minimum Order Quantity applies for bulk/export orders. Contact us for detailed pricing.
+                                </p>
+                            </FadeIn>
                         </div>
                     </div>
                 </Container>
@@ -205,23 +208,25 @@ export default async function ProductDetailPage({ params }: Props) {
             <section className="py-16 bg-neutral-light">
                 <Container>
                     <div className="max-w-5xl mx-auto">
-                        <h2 className="text-3xl md:text-4xl font-bold font-heading text-navy mb-8 text-center">
-                            Technical Specifications
-                        </h2>
+                        <FadeIn>
+                            <h2 className="text-3xl md:text-4xl font-bold font-heading text-navy mb-8 text-center">
+                                Technical Specifications
+                            </h2>
+                        </FadeIn>
 
                         <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-                            <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+                            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-200">
                                 {Object.entries(product.specs).map(([key, value], idx) => (
-                                    <div key={idx} className="p-6 hover:bg-gray-50 transition-colors">
+                                    <FadeInItem key={idx} className="p-6 hover:bg-gray-50 transition-colors">
                                         <dt className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">
                                             {key}
                                         </dt>
                                         <dd className="text-lg font-bold text-navy">
                                             {value}
                                         </dd>
-                                    </div>
+                                    </FadeInItem>
                                 ))}
-                            </div>
+                            </StaggerContainer>
                         </div>
                     </div>
                 </Container>
@@ -232,17 +237,19 @@ export default async function ProductDetailPage({ params }: Props) {
                 <Container>
                     <div className="max-w-4xl mx-auto">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-4xl font-bold font-heading text-navy mb-4">
-                                Why Quality Matters
-                            </h2>
-                            <p className="text-lg text-gray-600">
-                                The hidden risks of inferior {product.name.toLowerCase()} and how we prevent them.
-                            </p>
+                            <FadeIn>
+                                <h2 className="text-3xl md:text-4xl font-bold font-heading text-navy mb-4">
+                                    Why Quality Matters
+                                </h2>
+                                <p className="text-lg text-gray-600">
+                                    The hidden risks of inferior {product.name.toLowerCase()} and how we prevent them.
+                                </p>
+                            </FadeIn>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {product.benefits.map((benefit, idx) => (
-                                <div key={idx} className="bg-gradient-to-br from-red-50 to-orange-50 p-8 rounded-xl border-2 border-red-100 hover:border-primary transition-colors duration-300 group">
+                                <FadeInItem key={idx} className="bg-gradient-to-br from-red-50 to-orange-50 p-8 rounded-xl border-2 border-red-100 hover:border-primary transition-colors duration-300 group">
                                     <div className="flex items-start gap-4">
                                         <div className="shrink-0">
                                             <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
@@ -254,17 +261,17 @@ export default async function ProductDetailPage({ params }: Props) {
                                             <p className="text-gray-700 leading-relaxed">{benefit}</p>
                                         </div>
                                     </div>
-                                </div>
+                                </FadeInItem>
                             ))}
-                        </div>
+                        </StaggerContainer>
 
                         {/* Compliance Badge */}
-                        <div className="mt-12 flex justify-center">
+                        <FadeIn delay={0.3} className="mt-12 flex justify-center">
                             <div className="inline-flex items-center gap-3 px-6 py-3 bg-green-50 text-green-700 rounded-full font-medium border-2 border-green-200">
                                 <FileCheck className="w-5 h-5" />
                                 <span>Certificate of Analysis (COA) provided with every batch</span>
                             </div>
-                        </div>
+                        </FadeIn>
                     </div>
                 </Container>
             </section>
@@ -274,18 +281,22 @@ export default async function ProductDetailPage({ params }: Props) {
                 <section className="py-16 bg-neutral-light border-t border-gray-200">
                     <Container>
                         <div className="mb-10">
-                            <h2 className="text-3xl md:text-4xl font-bold font-heading text-navy mb-3">
-                                Related Products
-                            </h2>
-                            <p className="text-gray-600 text-lg">
-                                Other medical supplies you might be interested in
-                            </p>
+                            <FadeIn>
+                                <h2 className="text-3xl md:text-4xl font-bold font-heading text-navy mb-3">
+                                    Related Products
+                                </h2>
+                                <p className="text-gray-600 text-lg">
+                                    Other medical supplies you might be interested in
+                                </p>
+                            </FadeIn>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {relatedProducts.map((relatedProduct) => (
-                                <ProductCard key={relatedProduct.id} product={relatedProduct} />
+                                <FadeInItem key={relatedProduct.id}>
+                                    <ProductCard product={relatedProduct} />
+                                </FadeInItem>
                             ))}
-                        </div>
+                        </StaggerContainer>
                     </Container>
                 </section>
             )}
@@ -293,7 +304,7 @@ export default async function ProductDetailPage({ params }: Props) {
             {/* CTA Section */}
             <section className="py-20 bg-gradient-to-br from-navy to-navy-light text-white">
                 <Container>
-                    <div className="max-w-3xl mx-auto text-center">
+                    <FadeIn className="max-w-3xl mx-auto text-center">
                         <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
                             Ready to Order?
                         </h2>
@@ -308,7 +319,7 @@ export default async function ProductDetailPage({ params }: Props) {
                                 Browse All Products
                             </Link>
                         </div>
-                    </div>
+                    </FadeIn>
                 </Container>
             </section>
         </div>

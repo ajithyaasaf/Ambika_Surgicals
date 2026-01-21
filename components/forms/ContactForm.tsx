@@ -2,11 +2,17 @@
 
 import * as React from 'react';
 import { useFormStatus } from 'react-dom';
-import { submitContactForm } from '@/app/actions/contact';
+import { submitContactForm, submitQuoteRequest } from '@/app/actions/contact';
 import { Button } from '@/components/ui/button';
 import { Loader2, CheckCircle2, XCircle } from 'lucide-react';
 
-function SubmitButton() {
+interface ContactFormProps {
+    isQuoteRequest?: boolean;
+    productItems?: Array<{ id: string; quantity: number }>;
+    onSuccess?: () => void;
+}
+
+function SubmitButton({ isQuote }: { isQuote?: boolean }) {
     const { pending } = useFormStatus();
 
     return (
@@ -16,12 +22,12 @@ function SubmitButton() {
             disabled={pending}
             isLoading={pending}
         >
-            {pending ? 'Sending...' : 'Send Message'}
+            {pending ? 'Sending...' : (isQuote ? 'Submit Quote Request' : 'Send Message')}
         </Button>
     );
 }
 
-export default function ContactForm() {
+export default function ContactForm({ isQuoteRequest = false, productItems = [], onSuccess }: ContactFormProps) {
     const [state, setState] = React.useState<{
         success?: boolean;
         message?: string;
@@ -31,11 +37,19 @@ export default function ContactForm() {
     const formRef = React.useRef<HTMLFormElement>(null);
 
     async function handleSubmit(formData: FormData) {
-        const result = await submitContactForm(formData);
+        let result;
+
+        if (isQuoteRequest && productItems.length > 0) {
+            result = await submitQuoteRequest(formData, productItems);
+        } else {
+            result = await submitContactForm(formData);
+        }
+
         setState(result);
 
         if (result.success) {
             formRef.current?.reset();
+            if (onSuccess) onSuccess();
             // Auto-clear success message after 5 seconds
             setTimeout(() => setState({}), 5000);
         }
@@ -150,7 +164,7 @@ export default function ContactForm() {
                 )}
             </div>
 
-            <SubmitButton />
+            <SubmitButton isQuote={isQuoteRequest} />
         </form>
     );
 }
