@@ -2,13 +2,23 @@ import Image from 'next/image';
 
 export default function Hero() {
     return (
-        <section className="relative w-full h-[600px] overflow-hidden">
+        <section className="relative w-full h-[600px] md:h-[800px] overflow-hidden">
+            {/* Desktop Banner - Hidden on mobile, shown on md and up */}
             <Image
-                src="/images/Banner/Banner 1.jpg"
+                src="/images/Banner/2.jpeg"
                 alt="Ambika Surgicals"
                 fill
                 priority
-                className="object-cover"
+                className="hidden md:block object-cover"
+                sizes="100vw"
+            />
+            {/* Mobile Banner - Shown on mobile, hidden on md and up */}
+            <Image
+                src="/images/Banner/2 mobile.jpeg"
+                alt="Ambika Surgicals"
+                fill
+                priority
+                className="block md:hidden object-cover"
                 sizes="100vw"
             />
         </section>
