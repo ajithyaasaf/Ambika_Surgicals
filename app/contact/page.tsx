@@ -16,7 +16,7 @@ export default function ContactPage() {
             <section className="bg-navy py-16 text-center">
                 <Container>
                     <FadeIn delay={0.1}>
-                        <h1 className="text-4xl font-bold font-heading text-white mb-4">Contact & Inquiries</h1>
+                        <h1 className="text-4xl md:text-5xl font-bold font-heading text-white mb-4">Contact & Inquiries</h1>
                         <p className="text-gray-300 text-lg max-w-2xl mx-auto">
                             Reach out to our sales team for bulk quotes, export inquiries, or manufacturing partnerships.
                         </p>
@@ -29,7 +29,7 @@ export default function ContactPage() {
                     {/* Contact Details */}
                     <div className="lg:col-span-1 space-y-8">
                         <FadeIn delay={0.2}>
-                            <h2 className="text-2xl font-bold text-navy font-heading mb-6">Head Office</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold text-navy font-heading mb-6">Head Office</h2>
 
                             <div className="space-y-6">
                                 <div className="flex items-start">

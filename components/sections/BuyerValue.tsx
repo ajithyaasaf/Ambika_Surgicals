@@ -30,11 +30,11 @@ export default function BuyerValue() {
                 <FadeIn className="text-center max-w-3xl mx-auto mb-16">
                     <span className="text-primary font-bold tracking-wide uppercase text-sm">Why Partner With Us</span>
                     <h2 className="text-3xl md:text-4xl font-bold font-heading text-navy mt-2 mb-4">
-                        Built for the Healthcare Supply Chain
+                        Trusted by Hospitals, Clinics & Distributors
                     </h2>
                     <p className="text-gray-600 text-lg">
-                        We understand the distinct pressure points of the medical industry.
-                        Our processes are improved to solve them.
+                        We understand what healthcare providers need: reliable bandages, consistent quality, and timely delivery.
+                        Our manufacturing processes are designed to meet these critical requirements.
                     </p>
                 </FadeIn>
 

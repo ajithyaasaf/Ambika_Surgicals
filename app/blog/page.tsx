@@ -40,7 +40,7 @@ export default function BlogPage() {
                     <span className="bg-white px-3 py-1 rounded-full text-xs font-bold text-primary border border-primary/20 uppercase tracking-wide">
                         Knowledge Hub
                     </span>
-                    <h1 className="text-4xl font-bold font-heading text-navy mt-4 mb-4">Manufacturing Insights</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold font-heading text-navy mt-4 mb-4">Manufacturing Insights</h1>
                     <p className="text-gray-600 max-w-2xl mx-auto">
                         Technical resources and industry updates for healthcare procurement professionals.
                     </p>
@@ -75,7 +75,7 @@ export default function BlogPage() {
                 <div className="mt-16 bg-navy text-white rounded-2xl p-8 md:p-12 text-center relative overflow-hidden">
                     <BookOpen className="w-64 h-64 text-white/5 absolute -top-10 -right-10 leading-none" />
                     <div className="relative z-10">
-                        <h2 className="text-2xl font-bold font-heading mb-4">Download Our Product Catalog</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">Download Our Product Catalog</h2>
                         <p className="text-gray-300 mb-8 max-w-xl mx-auto">
                             Get detailed specifications, sizing charts, and packing information in our comprehensive PDF catalog.
                         </p>

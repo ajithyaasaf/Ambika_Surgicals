@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Hero from '@/components/sections/Hero';
+import HomeIntro from '@/components/sections/HomeIntro';
 import TrustStats from '@/components/sections/TrustStats';
 import CategoryOverview from '@/components/sections/CategoryOverview';
 import BuyerValue from '@/components/sections/BuyerValue';
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <HomeIntro />
       <TrustStats />
       <CategoryOverview />
       <BuyerValue />

@@ -18,20 +18,20 @@ export default function CategoryOverview() {
     return (
         <section className="py-20 bg-neutral-light">
             <Container>
-                <div className="flex flex-col md:flex-row justify-between items-end mb-12">
-                    <FadeIn direction="right" className="max-w-2xl">
+                <div className="mb-12">
+                    <FadeIn className="text-center max-w-3xl mx-auto mb-6">
                         <span className="text-primary font-bold tracking-wide uppercase text-sm">Product Range</span>
                         <h2 className="text-3xl md:text-4xl font-bold font-heading text-navy mt-2">
-                            Comprehensive Surgical Products, Precision-Engineered for Medical Safety
+                            Premium Surgical Bandages & Dressings, Trusted by Healthcare Professionals
                         </h2>
                         <p className="text-gray-600 mt-4 text-lg">
-                            Comprehensive range of surgical dressing materials manufactured in reliable, ISO-compliant facilities.
+                            Wide range of premium surgical bandages and dressings manufactured in reliable, ISO-compliant facilities.
                         </p>
                     </FadeIn>
-                    <FadeIn direction="left" delay={0.2}>
+                    <FadeIn delay={0.2} className="text-center">
                         <Link
                             href="/products"
-                            className="hidden md:flex items-center text-primary font-semibold hover:text-primary-dark transition-colors mt-4 md:mt-0"
+                            className="inline-flex items-center text-primary font-semibold hover:text-primary-dark transition-colors"
                         >
                             View Full Catalog <ArrowRight className="ml-2 h-5 w-5" />
                         </Link>

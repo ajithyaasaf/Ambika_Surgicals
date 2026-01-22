@@ -15,7 +15,7 @@ export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const [scrolled, setScrolled] = React.useState(false);
     const pathname = usePathname();
-    const { itemCount } = useCart();
+    const { itemCount, openCart } = useCart();
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -45,7 +45,7 @@ export default function Header() {
             <Container className="flex h-20 items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex items-center group">
-                    <div className="relative h-14 w-52 transition-transform duration-300 group-hover:scale-105">
+                    <div className="relative h-20 w-52 transition-transform duration-300 group-hover:scale-105">
                         <Image
                             src="/images/Logo.png"
                             alt={SITE_NAME}
@@ -81,8 +81,8 @@ export default function Header() {
 
                     <div className="flex items-center gap-4 pl-4 border-l border-gray-200">
                         {/* Cart Button */}
-                        <Link
-                            href="/inquiry"
+                        <button
+                            onClick={openCart}
                             className="group relative p-2.5 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-full transition-all duration-300"
                             aria-label={`View quote cart (${itemCount} items)`}
                         >
@@ -92,7 +92,7 @@ export default function Header() {
                                     {itemCount}
                                 </span>
                             )}
-                        </Link>
+                        </button>
 
                         {/* CTA Button */}
                         <Link href="/contact">
@@ -142,9 +142,12 @@ export default function Header() {
 
                     <div className="pt-4 mt-2 border-t border-gray-100">
                         {/* Cart Link for Mobile */}
-                        <Link
-                            href="/inquiry"
-                            className="flex items-center justify-between px-4 py-3 text-base font-medium text-gray-600 hover:bg-gray-50 rounded-xl transition-colors mb-4"
+                        <button
+                            onClick={() => {
+                                openCart();
+                                setIsMenuOpen(false);
+                            }}
+                            className="w-full flex items-center justify-between px-4 py-3 text-base font-medium text-gray-600 hover:bg-gray-50 rounded-xl transition-colors mb-4"
                         >
                             <span className="flex items-center gap-3">
                                 <div className="p-2 bg-gray-100 rounded-lg text-gray-600">
@@ -157,7 +160,7 @@ export default function Header() {
                                     {itemCount}
                                 </span>
                             )}
-                        </Link>
+                        </button>
 
                         <Link href="/contact" className="w-full">
                             <Button className="w-full rounded-xl py-6 font-bold shadow-lg shadow-primary/20">

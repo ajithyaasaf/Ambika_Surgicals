@@ -37,29 +37,29 @@ export default function ExportPage() {
                     <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
                         <FadeInItem className="p-6 bg-neutral-light rounded-xl border border-gray-100">
                             <FileCheck className="w-10 h-10 text-primary mb-4" />
-                            <h3 className="font-bold text-navy text-lg mb-2">Documentation</h3>
+                            <h3 className="font-bold text-navy text-xl mb-2">Documentation</h3>
                             <p className="text-sm text-gray-600">Complete documentation support including COA, COO, and sterilisation certificates for smooth customs clearance.</p>
                         </FadeInItem>
                         <FadeInItem className="p-6 bg-neutral-light rounded-xl border border-gray-100">
                             <Package className="w-10 h-10 text-navy mb-4" />
-                            <h3 className="font-bold text-navy text-lg mb-2">Custom Packaging</h3>
+                            <h3 className="font-bold text-navy text-xl mb-2">Custom Packaging</h3>
                             <p className="text-sm text-gray-600">Private labeling (OEM) and customized packaging options available to meet your market regulations.</p>
                         </FadeInItem>
                         <FadeInItem className="p-6 bg-neutral-light rounded-xl border border-gray-100">
                             <Ship className="w-10 h-10 text-primary mb-4" />
-                            <h3 className="font-bold text-navy text-lg mb-2">Logistics</h3>
+                            <h3 className="font-bold text-navy text-xl mb-2">Logistics</h3>
                             <p className="text-sm text-gray-600">Strategic proximity to Tuticorin and Chennai ports ensures timely shipments and reduced transit costs.</p>
                         </FadeInItem>
                         <FadeInItem className="p-6 bg-neutral-light rounded-xl border border-gray-100">
                             <Globe2 className="w-10 h-10 text-navy mb-4" />
-                            <h3 className="font-bold text-navy text-lg mb-2">Global Standards</h3>
+                            <h3 className="font-bold text-navy text-xl mb-2">Global Standards</h3>
                             <p className="text-sm text-gray-600">Manufacturing processes aligned with BP, USP, and EP standards for universal acceptance.</p>
                         </FadeInItem>
                     </StaggerContainer>
 
                     <FadeIn delay={0.2} className="bg-primary/5 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-primary/10">
                         <div className="max-w-2xl">
-                            <h2 className="text-3xl font-bold font-heading text-navy mb-4">Partner With Us</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold font-heading text-navy mb-4">Partner With Us</h2>
                             <p className="text-gray-700 text-lg">
                                 Looking for a reliable manufacturing partner in India? We offer competitive pricing for bulk contracts without compromising on quality or compliance.
                             </p>

@@ -20,7 +20,7 @@ export default function InquiryPage() {
         return (
             <div className="bg-neutral-light min-h-screen py-20">
                 <Container className="text-center">
-                    <h1 className="text-3xl font-bold font-heading text-navy mb-4">Your Quote Request is Empty</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold font-heading text-navy mb-4">Your Quote Request is Empty</h1>
                     <p className="text-gray-600 mb-8">Browse our catalog to add products to your inquiry.</p>
                     <Link href="/products" className={buttonVariants()}>
                         View Products
@@ -41,7 +41,7 @@ export default function InquiryPage() {
                     {/* Cart Items */}
                     <div className="lg:col-span-2">
                         <FadeIn>
-                            <h1 className="text-3xl font-bold font-heading text-navy mb-6">Request for Quote</h1>
+                            <h1 className="text-4xl md:text-5xl font-bold font-heading text-navy mb-6">Request for Quote</h1>
                         </FadeIn>
 
                         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mb-8">

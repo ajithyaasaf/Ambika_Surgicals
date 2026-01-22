@@ -30,7 +30,7 @@ export default async function ProductsPage({
             <Container>
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
                     <FadeIn>
-                        <h1 className="text-3xl font-bold font-heading text-navy">Product Catalog</h1>
+                        <h1 className="text-4xl md:text-5xl font-bold font-heading text-navy">Product Catalog</h1>
                         <p className="text-gray-600 mt-2">
                             {filteredProducts.length} export-grade surgical dressing products available.
                         </p>

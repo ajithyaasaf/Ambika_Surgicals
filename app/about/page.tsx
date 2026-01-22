@@ -84,8 +84,8 @@ export default function AboutPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         {/* Text Content */}
                         <FadeIn className="space-y-6 text-lg text-gray-700 leading-relaxed">
-                            <h2 className="text-3xl font-bold text-navy font-heading">
-                                A Legacy of Care & <span className="text-primary">Medical Precision</span>
+                            <h2 className="text-3xl md:text-4xl font-bold text-navy font-heading">
+                                A Legacy of Care & <span className="text-primary">Quality Bandages</span>
                             </h2>
                             <p>
                                 Established in <strong>Rajapalayam</strong>, Ambika Surgicals has grown from a regional supplier to a trusted name in the global medical supply chain.

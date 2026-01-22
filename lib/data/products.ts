@@ -19,7 +19,7 @@ export const PRODUCTS: Product[] = [
         slug: 'gauze-swabs',
         name: 'Gauze Swabs (Sterile & Non Sterile)',
         category: 'sterile-dressing',
-        description: 'We are a leading manufacturer and supplier of Gauze Swabs, known for our high-quality surgical products that strictly adhere to medical industry guidelines and norms.',
+        description: 'We are a leading manufacturer and supplier of Gauze Swabs, known for our high-quality surgical bandages and dressings that strictly adhere to medical industry guidelines and norms.',
         shortDescription: 'High-quality surgical gauze swabs for medical use.',
         specs: {
             'Size': '5cm x 5cm, 7.5cm x 7.5cm, 10cm x 10cm',
