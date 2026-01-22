@@ -14,7 +14,7 @@ export default function Hero() {
             />
             {/* Mobile Banner - Shown on mobile, hidden on md and up */}
             <Image
-                src="/images/Banner/2 mobile.jpeg"
+                src="/images/Banner/3.png"
                 alt="Ambika Surgicals"
                 fill
                 priority
