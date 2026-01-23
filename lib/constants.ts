@@ -10,7 +10,7 @@ export const NAV_LINKS = [
 
 export const COMPANY_INFO = {
     name: 'Ambika Surgicals',
-    address: 'SF No. 234/2A, SIDCO Industrial Estate, Rajapalayam - 626117, Virudhunagar District, Tamil Nadu, India',
+    address: '1/376, Sangaralinga Moopanar street, Samusigapuram, Rajapalayam, Tamil Nadu 626102',
     phone: '+91 90424 28156',
     mobile: '+91 90424 28156',
     email: 'ambikasurgicals555@gmail.com',

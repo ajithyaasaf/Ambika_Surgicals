@@ -85,7 +85,7 @@ export default function ContactForm({ isQuoteRequest = false, productItems = [],
                     name="name"
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                    placeholder="Karthi Kumar"
+                    placeholder="Enter your name"
                 />
                 {state.errors?.name && (
                     <p className="text-red-600 text-xs mt-1">{state.errors.name[0]}</p>
@@ -103,7 +103,7 @@ export default function ContactForm({ isQuoteRequest = false, productItems = [],
                     name="company"
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                    placeholder="Apollo Hospitals"
+                    placeholder="Enter company name"
                 />
                 {state.errors?.company && (
                     <p className="text-red-600 text-xs mt-1">{state.errors.company[0]}</p>
@@ -121,7 +121,7 @@ export default function ContactForm({ isQuoteRequest = false, productItems = [],
                     name="email"
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                    placeholder="karthi@apollohospitals.com"
+                    placeholder="Enter email address"
                 />
                 {state.errors?.email && (
                     <p className="text-red-600 text-xs mt-1">{state.errors.email[0]}</p>
@@ -139,7 +139,7 @@ export default function ContactForm({ isQuoteRequest = false, productItems = [],
                     name="phone"
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                    placeholder="+91 98765 43210"
+                    placeholder="Enter phone number"
                 />
                 {state.errors?.phone && (
                     <p className="text-red-600 text-xs mt-1">{state.errors.phone[0]}</p>
@@ -157,7 +157,7 @@ export default function ContactForm({ isQuoteRequest = false, productItems = [],
                     rows={4}
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
-                    placeholder="We need gauze swabs and surgical dressings for our hospital..."
+                    placeholder="Enter your message"
                 />
                 {state.errors?.message && (
                     <p className="text-red-600 text-xs mt-1">{state.errors.message[0]}</p>

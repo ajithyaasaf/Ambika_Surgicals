@@ -42,17 +42,17 @@ export default function RootLayout({
     logo: 'https://ambikasurgicals.com/logo.png', // Placeholder
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+91-9876543210', // Updated placeholder
+      telephone: '+91 90424 28156',
       contactType: 'sales',
       areaServed: ['IN', 'US', 'GB', 'AE'],
       availableLanguage: 'en'
     },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Rajapalayam',
-      addressLocality: 'Virudhunagar',
+      streetAddress: '1/376, Sangaralinga Moopanar street, Samusigapuram',
+      addressLocality: 'Rajapalayam',
       addressRegion: 'Tamil Nadu',
-      postalCode: '626117',
+      postalCode: '626102',
       addressCountry: 'IN'
     }
   };

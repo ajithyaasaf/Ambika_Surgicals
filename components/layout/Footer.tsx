@@ -13,12 +13,12 @@ export default function Footer() {
                     {/* Company Info */}
                     <div className="col-span-1 md:col-span-1">
                         <div className="mb-4">
-                            <div className="relative h-16 w-56 mb-4 brightness-0 invert">
+                            <div className="relative h-24 w-80 mb-6 brightness-0 invert">
                                 <Image
                                     src="/images/Logo.png"
                                     alt={SITE_NAME}
                                     fill
-                                    className="object-contain"
+                                    className="object-contain object-left"
                                 />
                             </div>
                         </div>
