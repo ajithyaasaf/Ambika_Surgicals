@@ -15,8 +15,40 @@ export default function InquiryPage() {
     const { items, removeItem, updateQuantity, clearCart } = useCart();
     const [isSubmitted, setIsSubmitted] = React.useState(false);
 
-    // If cart is empty
-    if (items.length === 0 && !isSubmitted) {
+    const handleSuccess = () => {
+        setIsSubmitted(true);
+        clearCart();
+    };
+
+    // Success View
+    if (isSubmitted) {
+        return (
+            <div className="bg-neutral-light min-h-screen py-20">
+                <Container className="text-center max-w-2xl">
+                    <FadeIn>
+                        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-600 mb-6">
+                            <Send className="w-8 h-8" />
+                        </div>
+                        <h1 className="text-4xl md:text-5xl font-bold font-heading text-navy mb-6">Quote Request Sent!</h1>
+                        <p className="text-gray-600 text-lg mb-8">
+                            Thank you for your interest. We have received your inquiry and our team will get back to you with a detailed quote shortly.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <Link href="/" className={buttonVariants({ variant: 'outline' })}>
+                                Return Home
+                            </Link>
+                            <Link href="/products" className={buttonVariants()}>
+                                Browse More Products
+                            </Link>
+                        </div>
+                    </FadeIn>
+                </Container>
+            </div>
+        );
+    }
+
+    // If cart is empty (and not just submitted)
+    if (items.length === 0) {
         return (
             <div className="bg-neutral-light min-h-screen py-20">
                 <Container className="text-center">
@@ -130,7 +162,7 @@ export default function InquiryPage() {
                             <ContactForm
                                 isQuoteRequest={true}
                                 productItems={items.map(item => ({ id: item.id, quantity: item.quantity }))}
-                                onSuccess={clearCart}
+                                onSuccess={handleSuccess}
                             />
                         </FadeIn>
                     </div>
