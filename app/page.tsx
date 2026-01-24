@@ -3,6 +3,7 @@ import Hero from '@/components/sections/Hero';
 import HomeIntro from '@/components/sections/HomeIntro';
 import TrustStats from '@/components/sections/TrustStats';
 import CategoryOverview from '@/components/sections/CategoryOverview';
+import DoctorTestimonial from '@/components/sections/DoctorTestimonial';
 import BuyerValue from '@/components/sections/BuyerValue';
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function Home() {
       <HomeIntro />
       <TrustStats />
       <CategoryOverview />
+      <DoctorTestimonial />
       <BuyerValue />
     </>
   );

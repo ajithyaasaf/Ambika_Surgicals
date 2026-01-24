@@ -25,14 +25,13 @@ type Props = {
 };
 
 export default function TestimonialVideoModal({
-  src = '/Videos/Testimonial.mp4',
-  storageKey = 'ambika:testimonialModal:v1',
+  src = 'https://www.youtube.com/embed/DbS6qrx1EvQ?autoplay=1&mute=0',
+  storageKey = 'ambika:manufacturingModal:v1',
   showOnPaths = ['/'],
-  showDelayMs = 700,
+  showDelayMs = 2000,
 }: Props) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = React.useState(false);
-  const videoRef = React.useRef<HTMLVideoElement | null>(null);
 
   const close = React.useCallback(() => {
     setIsOpen(false);
@@ -67,16 +66,6 @@ export default function TestimonialVideoModal({
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [isOpen, close]);
 
-  React.useEffect(() => {
-    if (!isOpen) return;
-    // Attempt autoplay (muted) when the modal opens
-    const el = videoRef.current;
-    if (!el) return;
-    el.currentTime = 0;
-    const p = el.play();
-    if (p && typeof p.catch === 'function') p.catch(() => {});
-  }, [isOpen]);
-
   if (!isOpen) return null;
 
   return (
@@ -85,30 +74,25 @@ export default function TestimonialVideoModal({
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={close} />
 
       {/* Modal */}
-      <div className="relative w-full max-w-3xl bg-white rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200 max-h-[90vh] flex flex-col">
+      <div className="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200 max-h-[90vh] flex flex-col">
         <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
           <div className="min-w-0">
-            <p className="text-sm font-semibold text-navy truncate">Doctor Testimonial</p>
-            <p className="text-xs text-gray-500 truncate">See what healthcare professionals say</p>
+            <p className="text-sm font-semibold text-navy truncate">Our Manufacturing Excellence</p>
+            <p className="text-xs text-gray-500 truncate">See how we ensure quality in every step</p>
           </div>
-          <Button variant="ghost" size="icon" onClick={close} aria-label="Close testimonial video">
+          <Button variant="ghost" size="icon" onClick={close} aria-label="Close video">
             <X className="h-5 w-5" />
           </Button>
         </div>
 
-        <div className="bg-black flex-1">
-          <div className="w-full h-[62vh] sm:h-auto sm:aspect-video">
-            <video
-              ref={videoRef}
-              className="h-full w-full object-contain"
-              src={src}
-              autoPlay
-              muted
-              playsInline
-              controls
-              preload="metadata"
-            />
-          </div>
+        <div className="bg-black flex-1 relative pt-[56.25%]">
+          <iframe
+            className="absolute inset-0 w-full h-full"
+            src={src}
+            title="Ambika Surgicals Manufacturing Process"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
         </div>
       </div>
     </div>
