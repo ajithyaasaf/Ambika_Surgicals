@@ -5,7 +5,7 @@ export default function Hero() {
         <section className="relative w-full h-[600px] md:h-[800px] overflow-hidden">
             {/* Desktop Banner - Hidden on mobile, shown on md and up */}
             <Image
-                src="/images/Banner/2.jpeg"
+                src="/images/Banner/3.jpeg"
                 alt="Ambika Surgicals"
                 fill
                 priority
@@ -14,7 +14,7 @@ export default function Hero() {
             />
             {/* Mobile Banner - Shown on mobile, hidden on md and up */}
             <Image
-                src="/images/Banner/3.png"
+                src="/images/Banner/4.png"
                 alt="Ambika Surgicals"
                 fill
                 priority

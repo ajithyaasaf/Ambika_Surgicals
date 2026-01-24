@@ -10,7 +10,7 @@ export default function HomeIntro() {
                         Premium Surgical Bandages & Dressings Manufacturer
                     </h1>
                     <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                        ISO-certified surgical dressing materials manufactured in Rajapalayam, India. 
+                        ISO-certified surgical dressing materials manufactured in Rajapalayam, India.
                         Trusted by hospitals, clinics, and distributors worldwide for quality, reliability, and export-grade standards.
                     </p>
                 </FadeIn>

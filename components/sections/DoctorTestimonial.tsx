@@ -10,7 +10,7 @@ export default function DoctorTestimonial() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Video Side */}
                     <FadeIn direction="right" className="order-last lg:order-first">
-                        <div className="relative aspect-video bg-gray-100 rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+                        <div className="relative aspect-square max-w-lg mx-auto bg-gray-100 rounded-2xl overflow-hidden shadow-xl border border-gray-100">
                             <video
                                 className="w-full h-full object-cover"
                                 src="/Videos/Testimonial.mp4"

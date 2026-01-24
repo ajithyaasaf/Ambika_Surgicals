@@ -153,7 +153,7 @@ export default function AboutPage() {
             <section className="py-20">
                 <Container className="max-w-3xl">
                     <FadeIn>
-                        <h2 className="text-3xl font-bold text-navy font-heading mb-8 text-center">
+                        <h2 className="text-3xl font-bold text-navy font-heading mb-8 text-center leading-tight">
                             Frequently Asked Questions
                         </h2>
                     </FadeIn>
