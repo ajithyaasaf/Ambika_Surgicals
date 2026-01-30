@@ -28,6 +28,7 @@ function SubmitButton({ isQuote }: { isQuote?: boolean }) {
 }
 
 export default function ContactForm({ isQuoteRequest = false, productItems = [], onSuccess }: ContactFormProps) {
+    const [startTime] = React.useState(Date.now());
     const [state, setState] = React.useState<{
         success?: boolean;
         message?: string;
@@ -163,6 +164,10 @@ export default function ContactForm({ isQuoteRequest = false, productItems = [],
                     <p className="text-red-600 text-xs mt-1">{state.errors.message[0]}</p>
                 )}
             </div>
+
+            {/* Anti-spam Fields */}
+            <input type="text" name="website_url" className="hidden" tabIndex={-1} autoComplete="off" />
+            <input type="hidden" name="_t" value={startTime} />
 
             <SubmitButton isQuote={isQuoteRequest} />
         </form>

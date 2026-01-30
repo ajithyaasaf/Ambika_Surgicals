@@ -13,6 +13,28 @@ import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
  */
 export async function submitContactForm(formData: FormData): Promise<ActionResponse> {
     try {
+        // Anti-spam check (HoneyPot & Timing)
+        const honeypot = formData.get('website_url');
+        const timestamp = formData.get('_t');
+        const now = Date.now();
+
+        if (honeypot) {
+            console.warn(`Spam detected (Honeypot): ${formData.get('email')} - content: ${honeypot}`);
+            // Silent failure - return success to fool the bot
+            return {
+                success: true,
+                message: 'Thank you for your inquiry! Our team will contact you within 24 hours.',
+            };
+        }
+
+        // Defensive timing check (only warn for now)
+        if (timestamp) {
+            const timeDiff = now - parseInt(timestamp as string);
+            if (timeDiff < 1000) {
+                console.warn(`Suspiciously fast submission (${timeDiff}ms): ${formData.get('email')}`);
+            }
+        }
+
         // Extract form data
         const rawData = {
             name: formData.get('name'),
@@ -80,6 +102,26 @@ export async function submitQuoteRequest(
     productItems: Array<{ id: string; quantity: number }>
 ): Promise<ActionResponse> {
     try {
+        // Anti-spam check (HoneyPot & Timing)
+        const honeypot = formData.get('website_url');
+        const timestamp = formData.get('_t');
+        const now = Date.now();
+
+        if (honeypot) {
+            console.warn(`Spam detected (Honeypot - Quote): ${formData.get('email')} - content: ${honeypot}`);
+            return {
+                success: true,
+                message: 'Quote request submitted successfully! We will send you a detailed quotation within 48 hours.',
+            };
+        }
+
+        if (timestamp) {
+            const timeDiff = now - parseInt(timestamp as string);
+            if (timeDiff < 1000) {
+                console.warn(`Suspiciously fast quote submission (${timeDiff}ms): ${formData.get('email')}`);
+            }
+        }
+
         const rawData = {
             name: formData.get('name'),
             company: formData.get('company'),
