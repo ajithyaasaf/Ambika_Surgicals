@@ -34,7 +34,7 @@ export const PRODUCTS: Product[] = [
             'Consistent absorbency reduces frequent dressing changes'
         ],
         features: ['Folded edges', 'X-ray detectable option', 'Individual sterile packaging'],
-        imageUrl: '/images/products/1. GAUZE SWABS.jpg'
+        imageUrl: '/images/products/1. GAUZE SWABS.jpeg'
     },
     {
         id: 'p2',
@@ -56,7 +56,7 @@ export const PRODUCTS: Product[] = [
             'Custom sizes available for different surgical procedures'
         ],
         features: ['X-ray opaque thread', 'High absorbency', 'Customizable sizes'],
-        imageUrl: '/images/products/2. mopping pad.jpg'
+        imageUrl: '/images/products/2. mopping pad.jpeg'
     },
     {
         id: 'p3',
@@ -78,7 +78,7 @@ export const PRODUCTS: Product[] = [
             'Disposable design reduces cross-contamination risk'
         ],
         features: ['Premium material quality', 'Multiple size options', 'Customizable GSM'],
-        imageUrl: '/images/products/3. GAMJEE PAD.jpg'
+        imageUrl: '/images/products/3. GAMJEE PAD.jpeg'
     },
     {
         id: 'p4',
@@ -100,7 +100,7 @@ export const PRODUCTS: Product[] = [
             'Customizable lengths reduce waste and cost'
         ],
         features: ['Chemical-free', 'Smooth finish', 'Fully customizable'],
-        imageUrl: '/images/products/4. ROLLER BANDAGE.jpg'
+        imageUrl: '/images/products/4. ROLLER BANDAGE.jpeg'
     },
     {
         id: 'p5',
@@ -122,7 +122,7 @@ export const PRODUCTS: Product[] = [
             'Chemical-free ensures patient safety'
         ],
         features: ['Easy unwinding', 'Smooth edges', 'Chemical-free'],
-        imageUrl: '/images/products/5. GAUZE CLOTH-A.jpg'
+        imageUrl: '/images/products/5. GAUZE CLOTH-A.jpeg'
     },
     {
         id: 'p6',
@@ -144,7 +144,7 @@ export const PRODUCTS: Product[] = [
             'Superior absorbency maintains wound care standards'
         ],
         features: ['1000+ meters length', 'Bulk packaging', 'Cost-effective'],
-        imageUrl: '/images/products/6. JUMBO ROLL.jpg'
+        imageUrl: '/images/products/6. JUMBO ROLL.jpeg'
     },
     {
         id: 'p7',
@@ -166,7 +166,7 @@ export const PRODUCTS: Product[] = [
             'Multiple packaging sizes suit different clinical needs'
         ],
         features: ['Chemical-free', 'High absorbency', 'Multi-purpose use'],
-        imageUrl: '/images/products/7. ABSORBENT COTTON.jpg'
+        imageUrl: '/images/products/7. ABSORBENT COTTON.jpeg'
     },
     {
         id: 'p8',
@@ -188,7 +188,7 @@ export const PRODUCTS: Product[] = [
             'Ideal for bleeding control after injections'
         ],
         features: ['100% natural', 'Uniform weight', 'Medical grade'],
-        imageUrl: '/images/products/8. COTTON BALL.jpg'
+        imageUrl: '/images/products/8. COTTON BALL.jpeg'
     },
     {
         id: 'p9',
@@ -210,7 +210,7 @@ export const PRODUCTS: Product[] = [
             'Hygienic packaging maintains sterility until use'
         ],
         features: ['Zig zag fold', 'Very soft', 'Hygienic'],
-        imageUrl: '/images/products/9. ZIG ZAG COTTON.jpg'
+        imageUrl: '/images/products/9. ZIG ZAG COTTON.jpeg'
     },
     {
         id: 'p10',
@@ -232,7 +232,7 @@ export const PRODUCTS: Product[] = [
             'Standardized contents improve procedure consistency'
         ],
         features: ['Complete kit', 'Sterile packaging', 'Ready to use'],
-        imageUrl: '/images/products/10. DRESSING KIT & DIALYSIS KIT.jpg'
+        imageUrl: '/images/products/10. DRESSING KIT & DIALYSIS KIT.jpeg'
     },
     {
         id: 'p11',
@@ -254,7 +254,7 @@ export const PRODUCTS: Product[] = [
             'Cost-effective solution for high-turnover facilities'
         ],
         features: ['Cost effective', 'Easily disposable', 'Fluid resistant'],
-        imageUrl: '/images/products/11. DISPOSABLE COVER.jpg'
+        imageUrl: '/images/products/11. DISPOSABLE COVER.jpeg'
     },
     {
         id: 'p12',
@@ -276,7 +276,7 @@ export const PRODUCTS: Product[] = [
             'Suitable for various diagnostic and surgical procedures'
         ],
         features: ['AAMI Level 2', 'Multiple sizes', 'Medical grade'],
-        imageUrl: '/images/products/12. patient gown & surgeon gown.jpg'
+        imageUrl: '/images/products/12. patient gown & surgeon gown.jpeg'
     }
 ];
 
