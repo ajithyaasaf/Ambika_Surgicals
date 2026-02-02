@@ -42,10 +42,10 @@ export default function Header() {
                     : "bg-white border-b border-transparent"
             )}
         >
-            <Container className="flex h-20 items-center justify-between">
+            <Container className="flex h-28 items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex items-center group">
-                    <div className="relative h-20 w-52 transition-transform duration-300 group-hover:scale-105">
+                    <div className="relative h-28 w-72 transition-transform duration-300 group-hover:scale-105">
                         <Image
                             src="/images/Logo.png"
                             alt={SITE_NAME}

@@ -2,17 +2,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { Container } from '@/components/ui/container';
-import { CATEGORIES } from '@/lib/data/products';
+import { PRODUCTS } from '@/lib/data/products';
 import FadeIn, { StaggerContainer, FadeInItem } from '@/components/animations/FadeIn';
-
-// Representative product images for each category
-const CATEGORY_IMAGES: Record<string, string> = {
-    'sterile-dressing': '/images/products/1. GAUZE SWABS.jpg',
-    'bandages': '/images/products/4. ROLLER BANDAGE.jpg',
-    'cotton-products': '/images/products/7. ABSORBENT COTTON.jpg',
-    'medical-kits': '/images/products/10. DRESSING KIT & DIALYSIS KIT.jpg',
-    'protective-wear': '/images/products/12. patient gown & surgeon gown.jpg',
-};
 
 export default function CategoryOverview() {
     return (
@@ -39,17 +30,21 @@ export default function CategoryOverview() {
                 </div>
 
                 <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {CATEGORIES.map((cat) => (
-                        <FadeInItem key={cat.id}>
+                    {PRODUCTS.filter(p => ['p5', 'p1', 'p4', 'p7'].includes(p.id)).sort((a, b) => {
+                        // Sort functionality to match specific order if needed, otherwise filter order relies on original array order
+                        const order = ['p5', 'p1', 'p4', 'p7'];
+                        return order.indexOf(a.id) - order.indexOf(b.id);
+                    }).map((product) => (
+                        <FadeInItem key={product.id}>
                             <Link
-                                href={`/products?category=${cat.id}`}
+                                href={`/products/${product.slug}`}
                                 className="group relative overflow-hidden rounded-lg bg-white shadow-sm hover:shadow-md transition-all duration-300 block"
                             >
-                                {/* Category Image */}
+                                {/* Product Image */}
                                 <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
                                     <Image
-                                        src={CATEGORY_IMAGES[cat.id]}
-                                        alt={cat.label}
+                                        src={product.imageUrl}
+                                        alt={product.name}
                                         fill
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                                         className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -59,11 +54,11 @@ export default function CategoryOverview() {
                                 </div>
 
                                 <div className="p-6">
-                                    <h3 className="text-xl font-bold text-navy group-hover:text-primary transition-colors">
-                                        {cat.label}
+                                    <h3 className="text-xl font-bold text-navy group-hover:text-primary transition-colors line-clamp-1">
+                                        {product.name}
                                     </h3>
                                     <span className="inline-flex items-center text-sm font-medium text-primary mt-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                                        Explore <ArrowRight className="ml-1 h-4 w-4" />
+                                        View Details <ArrowRight className="ml-1 h-4 w-4" />
                                     </span>
                                 </div>
                             </Link>
