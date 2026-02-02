@@ -14,9 +14,9 @@ export default function Footer() {
                     {/* Company Info */}
                     <div className="col-span-1 md:col-span-1">
                         <div className="mb-4">
-                            <div className="relative h-24 w-80 mb-6 brightness-0 invert">
+                            <div className="relative h-16 w-60 mb-6">
                                 <Image
-                                    src="/images/Logo.png"
+                                    src="/images/white.png"
                                     alt={SITE_NAME}
                                     fill
                                     className="object-contain object-left"
