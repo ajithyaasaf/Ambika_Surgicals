@@ -27,7 +27,7 @@ export const COMPANY_INFO = {
     // Social (optional)
     whatsapp: '+919042428156',
     instagram: 'https://www.instagram.com/ambikas_health/',
-    facebook: 'https://www.facebook.com/share/p/1BsV27Dwk9/',
+    facebook: 'https://www.facebook.com/people/Ambikas/61571927440433/',
 };
 
 // Trust Indicators
