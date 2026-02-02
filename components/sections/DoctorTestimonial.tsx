@@ -43,9 +43,9 @@ export default function DoctorTestimonial() {
 
                         <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
                             <div>
-                                <h4 className="font-bold text-navy text-lg">Dr. A. S. Reyas</h4>
+                                <h4 className="font-bold text-navy text-lg">Dr. J. Tharik Ajees</h4>
                                 <p className="text-gray-500 text-sm">Managing Director & Chief Surgeon</p>
-                                <p className="text-primary text-sm font-medium">M.S. Ortho</p>
+                                <p className="text-primary text-sm font-medium">M.B.B.S., MS (Ortho)</p>
                             </div>
                         </div>
                     </FadeIn>
