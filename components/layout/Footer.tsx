@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Instagram, Facebook } from 'lucide-react';
 import { Container } from '@/components/ui/container';
 import { SITE_NAME, NAV_LINKS, COMPANY_INFO } from '@/lib/constants';
 
@@ -69,6 +70,35 @@ export default function Footer() {
                                 ))}
                             </div>
                         </address>
+
+                        {/* Social Links */}
+                        <div className="mt-6">
+                            <h4 className="font-bold mb-3 text-gray-100">Follow Us</h4>
+                            <div className="flex gap-4">
+                                {COMPANY_INFO.instagram && (
+                                    <a
+                                        href={COMPANY_INFO.instagram}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="bg-white/10 p-2 rounded-full hover:bg-primary hover:text-white transition-all duration-300"
+                                        aria-label="Instagram"
+                                    >
+                                        <Instagram className="w-5 h-5" />
+                                    </a>
+                                )}
+                                {COMPANY_INFO.facebook && (
+                                    <a
+                                        href={COMPANY_INFO.facebook}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="bg-white/10 p-2 rounded-full hover:bg-primary hover:text-white transition-all duration-300"
+                                        aria-label="Facebook"
+                                    >
+                                        <Facebook className="w-5 h-5" />
+                                    </a>
+                                )}
+                            </div>
+                        </div>
                     </div>
                 </div>
 

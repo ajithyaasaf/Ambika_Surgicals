@@ -3,10 +3,10 @@ import { Clock, Leaf, Shield, Users } from 'lucide-react';
 import { StaggerContainer, FadeInItem } from '@/components/animations/FadeIn';
 
 const STATS = [
-    { value: '15+', label: 'Years of Experience', Icon: Clock },
+    { value: '25+', label: 'Years of Experience', Icon: Clock },
     { value: '100%', label: 'Pure Cotton', Icon: Leaf },
     { value: 'ISO 13485', label: 'Quality Certified', Icon: Shield },
-    { value: '50+', label: 'Happy Clients', Icon: Users },
+    { value: '1000+', label: 'Happy Clients', Icon: Users },
 ];
 
 export default function TrustStats() {

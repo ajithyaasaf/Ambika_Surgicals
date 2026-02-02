@@ -26,12 +26,14 @@ export const COMPANY_INFO = {
     ],
     // Social (optional)
     whatsapp: '+919042428156',
+    instagram: 'https://www.instagram.com/ambikas_health/',
+    facebook: 'https://www.facebook.com/share/p/1BsV27Dwk9/',
 };
 
 // Trust Indicators
 export const TRUST_STATS = [
-    { value: '15+', label: 'Years of Experience', icon: 'clock' },
+    { value: '25+', label: 'Years of Experience', icon: 'clock' },
     { value: '20+', label: 'Export Destinations', icon: 'globe' },
     { value: 'ISO 13485', label: 'Quality Certified', icon: 'shield' },
-    { value: '50K+', label: 'Monthly Production', icon: 'package' },
+    { value: '1000+', label: 'Monthly Production', icon: 'package' },
 ];
