@@ -116,7 +116,10 @@ export default async function ProductDetailPage({ params }: Props) {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
                         {/* Product Image */}
                         <FadeIn className="space-y-6">
-                            <div className="aspect-square bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-2 border-gray-200 relative overflow-hidden">
+                            <div className={cn(
+                                "bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl border-2 border-gray-200 relative overflow-hidden",
+                                product.imageAspectRatio || "aspect-square"
+                            )}>
                                 <Image
                                     src={product.imageUrl}
                                     alt={product.name}

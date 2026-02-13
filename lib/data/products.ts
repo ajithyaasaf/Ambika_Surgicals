@@ -11,6 +11,7 @@ export interface Product {
     benefits: string[];
     features: string[];
     imageUrl: string;
+    imageAspectRatio?: string; // e.g. 'aspect-square', 'aspect-video', 'aspect-[4/3]'
 }
 
 export const PRODUCTS: Product[] = [
@@ -81,6 +82,29 @@ export const PRODUCTS: Product[] = [
         imageUrl: '/images/products/3. GAMJEE PAD.jpeg'
     },
     {
+        id: 'p13',
+        slug: 'dressing-pad',
+        name: 'Dressing Pad (Sterile)',
+        category: 'sterile-dressing',
+        description: 'Our sterile Dressing Pads are manufactured from premium 100% cotton, designed for superior absorbency and protection of wound sites. These pads are EO sterilized to ensure maximum safety and infection control.',
+        shortDescription: 'Sterile high-absorbency cotton dressing pads.',
+        specs: {
+            'Material': '100% Cotton',
+            'Sterility': 'EO Sterile',
+            'Type': 'High Absorbency',
+            'Packaging': 'Individual sterile packs',
+            'Standard': 'Medical Grade'
+        },
+        benefits: [
+            'EO sterilization ensures complete safety for open wounds',
+            'High absorbency effectively manages wound exudate',
+            'Soft cotton material prevents irritation and promotes healing'
+        ],
+        features: ['Sterile packaging', '100% pure cotton', 'Superior absorbency'],
+        imageUrl: '/images/products/13. DRESSING PAD.jpeg',
+        imageAspectRatio: 'aspect-[4/3]'
+    },
+    {
         id: 'p4',
         slug: 'roller-bandage',
         name: 'Roller Bandage',
@@ -145,6 +169,29 @@ export const PRODUCTS: Product[] = [
         ],
         features: ['1000+ meters length', 'Bulk packaging', 'Cost-effective'],
         imageUrl: '/images/products/6. JUMBO ROLL.jpeg'
+    },
+    {
+        id: 'p14',
+        slug: 'bandage-cloth',
+        name: 'Bandage Cloth',
+        category: 'bandages',
+        description: 'Our premium Bandage Cloth is crafted from high-quality cotton, offering exceptional breathability and durability. It is soft on the skin and versatile for various medical dressing needs.',
+        shortDescription: 'Versatile and breathable cotton bandage cloth.',
+        specs: {
+            'Material': '100% Cotton',
+            'Weave': 'Standard medical weave',
+            'Texture': 'Soft & Durable',
+            'Breathability': 'High',
+            'Application': 'General wound dressing'
+        },
+        benefits: [
+            'Soft texture prevents skin irritation during prolonged use',
+            'High breathability promotes faster healing of covered areas',
+            'Durable fabric ensures secure dressing application'
+        ],
+        features: ['100% Cotton', 'High breathability', 'Soft texture'],
+        imageUrl: '/images/products/14. BANDAGE CLOTH.jpeg',
+        imageAspectRatio: 'aspect-[4/3]'
     },
     {
         id: 'p7',
@@ -277,7 +324,8 @@ export const PRODUCTS: Product[] = [
         ],
         features: ['AAMI Level 2', 'Multiple sizes', 'Medical grade'],
         imageUrl: '/images/products/12. patient gown & surgeon gown.jpeg'
-    }
+    },
+
 ];
 
 export const CATEGORIES: { id: ProductCategory; label: string }[] = [
