@@ -44,12 +44,24 @@ export default function ContactPage() {
                                     <Phone className="w-6 h-6 text-primary mt-1 shrink-0" />
                                     <div className="ml-4 space-y-3">
                                         <h3 className="font-semibold text-navy">Phone</h3>
-                                        {COMPANY_INFO.contactPersons?.map((person, index) => (
-                                            <div key={index}>
-                                                <p className="font-medium text-navy">{person.name}</p>
-                                                <p className="text-gray-600">{person.phone}</p>
-                                            </div>
-                                        ))}
+                                        {COMPANY_INFO.contactPersons?.map((person, index) => {
+                                            const phones = person.phones || (person.phone ? [person.phone] : []);
+                                            return (
+                                                <div key={index} className="space-y-1">
+                                                    <p className="font-medium text-navy">{person.name}</p>
+                                                    {phones.map((phone, pIdx) => (
+                                                        <p key={pIdx}>
+                                                            <a
+                                                                href={`tel:${phone.replace(/\s/g, '')}`}
+                                                                className="text-gray-600 hover:text-primary transition-colors"
+                                                            >
+                                                                {phone}
+                                                            </a>
+                                                        </p>
+                                                    ))}
+                                                </div>
+                                            );
+                                        })}
                                         <p className="text-sm text-gray-500 mt-1 pt-1 border-t border-gray-100">Mon-Sat, 9am - 7pm IST</p>
                                     </div>
                                 </div>

@@ -21,8 +21,11 @@ export const COMPANY_INFO = {
     establishedYear: '2010', // Adjust as needed
     // Contact Persons
     contactPersons: [
-        { name: 'Poorana Chandran', phone: '+91 90424 28156' },
-        { name: 'Ravi Chandran', phone: '+91 95978 78470' },
+        {
+            name: 'Poorana Chandran',
+            phone: '+91 90424 28156',
+            phones: ['+91 90424 28156', '+91 99527 76523'],
+        },
     ],
     // Social (optional)
     whatsapp: '+919042428156',

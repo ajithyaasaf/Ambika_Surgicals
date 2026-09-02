@@ -91,12 +91,24 @@ export default function Footer() {
                             <p><a href={`mailto:${COMPANY_INFO.email}`} className="hover:text-primary-light">{COMPANY_INFO.email}</a></p>
 
                             <div className="mt-4 space-y-3">
-                                {COMPANY_INFO.contactPersons?.map((person, index) => (
-                                    <div key={index}>
-                                        <p className="font-semibold text-gray-200">{person.name}</p>
-                                        <p><a href={`tel:${person.phone.replace(/\s/g, '')}`} className="hover:text-primary-light">{person.phone}</a></p>
-                                    </div>
-                                ))}
+                                {COMPANY_INFO.contactPersons?.map((person, index) => {
+                                    const phones = person.phones || (person.phone ? [person.phone] : []);
+                                    return (
+                                        <div key={index} className="space-y-1">
+                                            <p className="font-semibold text-gray-200">{person.name}</p>
+                                            {phones.map((phone, pIdx) => (
+                                                <p key={pIdx}>
+                                                    <a
+                                                        href={`tel:${phone.replace(/\s/g, '')}`}
+                                                        className="hover:text-primary-light transition-colors"
+                                                    >
+                                                        {phone}
+                                                    </a>
+                                                </p>
+                                            ))}
+                                        </div>
+                                    );
+                                })}
                             </div>
                         </address>
 
