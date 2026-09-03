@@ -28,36 +28,36 @@ export default async function ProductsPage({
     return (
         <div className="bg-neutral-light min-h-screen py-16">
             <Container>
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4 w-full min-w-0">
                     <FadeIn>
-                        <h1 className="text-4xl md:text-5xl font-bold font-heading text-navy">Product Catalog</h1>
-                        <p className="text-gray-600 mt-2">
+                        <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold font-heading text-navy">Product Catalog</h1>
+                        <p className="text-gray-600 text-xs sm:text-sm mt-1">
                             {filteredProducts.length} export-grade surgical dressing products available.
                         </p>
                     </FadeIn>
 
-                    {/* Category Filter Pills */}
-                    <FadeIn delay={0.1}>
-                        <div className="flex flex-wrap gap-2">
+                    {/* Category Filter Pills (Smooth horizontal touch scroll on mobile) */}
+                    <div className="w-full min-w-0 md:w-auto overflow-hidden">
+                        <div className="flex items-center overflow-x-auto py-1.5 md:py-0 md:flex-wrap gap-2 -mx-4 px-4 md:mx-0 md:px-0 no-scrollbar touch-pan-x overscroll-x-contain">
                             <Link
                                 href="/products"
                                 className={cn(
-                                    "px-4 py-2 rounded-full text-sm font-medium transition-colors border",
+                                    "px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors border whitespace-nowrap shrink-0",
                                     !selectedCategory
-                                        ? "bg-navy text-white border-navy"
+                                        ? "bg-navy text-white border-navy shadow-xs"
                                         : "bg-white text-gray-600 border-gray-200 hover:border-navy hover:text-navy"
                                 )}
                             >
-                                All
+                                All Products
                             </Link>
                             {CATEGORIES.map(cat => (
                                 <Link
                                     key={cat.id}
                                     href={`/products?category=${cat.id}`}
                                     className={cn(
-                                        "px-4 py-2 rounded-full text-sm font-medium transition-colors border",
+                                        "px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors border whitespace-nowrap shrink-0",
                                         selectedCategory === cat.id
-                                            ? "bg-navy text-white border-navy"
+                                            ? "bg-navy text-white border-navy shadow-xs"
                                             : "bg-white text-gray-600 border-gray-200 hover:border-navy hover:text-navy"
                                     )}
                                 >
@@ -65,12 +65,12 @@ export default async function ProductsPage({
                                 </Link>
                             ))}
                         </div>
-                    </FadeIn>
+                    </div>
                 </div>
 
-                {/* Product Grid */}
+                {/* Product Grid (2 columns on mobile, 3 on tablet, 4 on desktop) */}
                 {filteredProducts.length > 0 ? (
-                    <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
                         {filteredProducts.map(product => (
                             <FadeInItem key={product.id}>
                                 <ProductCard product={product} />

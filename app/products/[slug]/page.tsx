@@ -293,7 +293,7 @@ export default async function ProductDetailPage({ params }: Props) {
                                 </p>
                             </FadeIn>
                         </div>
-                        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
                             {relatedProducts.map((relatedProduct) => (
                                 <FadeInItem key={relatedProduct.id}>
                                     <ProductCard product={relatedProduct} />
