@@ -9,6 +9,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { SITE_NAME } from '@/lib/constants';
 import { AddToQuoteButton } from '@/components/product/AddToQuoteButton';
 import ProductCard from '@/components/product/ProductCard';
+import ProductMobileStickyBar from '@/components/product/ProductMobileStickyBar';
 import { getRelatedProducts, generateBreadcrumbSchema } from '@/lib/product-utils';
 import { cn } from '@/lib/utils';
 import FadeIn, { StaggerContainer, FadeInItem } from '@/components/animations/FadeIn';
@@ -83,7 +84,7 @@ export default async function ProductDetailPage({ params }: Props) {
     const relatedProducts = getRelatedProducts(product, 3);
 
     return (
-        <div className="bg-white min-h-screen">
+        <div className="bg-white min-h-screen pb-16 md:pb-0">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
@@ -325,6 +326,9 @@ export default async function ProductDetailPage({ params }: Props) {
                     </FadeIn>
                 </Container>
             </section>
+
+            {/* Mobile Sticky Bottom Action Bar */}
+            <ProductMobileStickyBar product={product} />
         </div>
     );
 }

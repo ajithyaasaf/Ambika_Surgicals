@@ -59,14 +59,14 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={cn(inter.variable, poppins.variable)}>
+    <html lang="en" className={cn(inter.variable, poppins.variable)} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
-      <body className="font-sans antialiased text-neutral-gray bg-neutral-light min-h-screen flex flex-col">
+      <body className="font-sans antialiased text-neutral-gray bg-neutral-light min-h-screen flex flex-col" suppressHydrationWarning>
         <CartProvider>
           <Header />
           <main className="flex-grow">

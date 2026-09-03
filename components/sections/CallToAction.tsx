@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { Container } from '@/components/ui/container';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, ShieldCheck, Truck, Award, MessageCircle } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Truck, Award } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa6';
 import FadeIn from '@/components/animations/FadeIn';
 import { COMPANY_INFO } from '@/lib/constants';
 
@@ -50,7 +51,7 @@ export default function CallToAction({
                             rel="noopener noreferrer"
                             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white px-8 py-3.5 rounded-md font-bold shadow-lg transition-colors text-base"
                         >
-                            <MessageCircle className="w-5 h-5" />
+                            <FaWhatsapp className="w-5 h-5 text-white" />
                             <span>Quick Chat on WhatsApp</span>
                         </a>
                     </div>

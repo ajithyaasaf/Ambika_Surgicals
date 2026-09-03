@@ -4,7 +4,8 @@ import * as React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Plus, Minus, Trash2, ShoppingCart, MessageCircle, ArrowRight } from 'lucide-react';
+import { X, Plus, Minus, Trash2, ShoppingCart, ArrowRight } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa6';
 import { useCart } from '@/lib/context/CartContext';
 import { Button } from '@/components/ui/button';
 import { COMPANY_INFO } from '@/lib/constants';
@@ -221,7 +222,7 @@ export default function CartDrawer() {
                                     rel="noopener noreferrer"
                                     className="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white py-3 px-4 rounded-lg font-semibold shadow-sm transition-all duration-200 text-sm"
                                 >
-                                    <MessageCircle className="w-4 h-4" />
+                                    <FaWhatsapp className="w-5 h-5 text-white shrink-0" />
                                     <span>Instant Quote via WhatsApp</span>
                                 </a>
 

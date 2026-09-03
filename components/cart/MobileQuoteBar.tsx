@@ -10,8 +10,9 @@ export default function MobileQuoteBar() {
     const { itemCount, openCart } = useCart();
     const pathname = usePathname();
 
-    // Do not show on the inquiry/quote page itself or if cart is empty
-    if (itemCount === 0 || pathname === '/inquiry') {
+    // Do not show on the inquiry/quote page, if cart is empty, or on product detail pages (which have dedicated sticky bar)
+    const isProductDetail = pathname ? pathname.startsWith('/products/') && pathname !== '/products' : false;
+    if (itemCount === 0 || pathname === '/inquiry' || isProductDetail) {
         return null;
     }
 

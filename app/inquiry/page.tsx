@@ -6,7 +6,8 @@ import Image from 'next/image';
 import { Container } from '@/components/ui/container';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { useCart } from '@/lib/context/CartContext';
-import { Trash2, ArrowLeft, Send, Minus, Plus, MessageCircle } from 'lucide-react';
+import { Trash2, ArrowLeft, Send, Minus, Plus } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa6';
 import ContactForm from '@/components/forms/ContactForm';
 import FadeIn, { StaggerContainer, FadeInItem } from '@/components/animations/FadeIn';
 import { COMPANY_INFO } from '@/lib/constants';
@@ -202,7 +203,7 @@ export default function InquiryPage() {
                                     rel="noopener noreferrer"
                                     className="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white py-3 px-4 rounded-xl font-bold shadow-sm transition-all text-sm"
                                 >
-                                    <MessageCircle className="w-4 h-4" />
+                                    <FaWhatsapp className="w-5 h-5 text-white shrink-0" />
                                     <span>Send List via WhatsApp</span>
                                 </a>
                             </div>
