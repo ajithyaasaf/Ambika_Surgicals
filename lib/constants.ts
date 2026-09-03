@@ -4,7 +4,7 @@ export const SITE_DOMAIN = 'https://ambikasurgicals.com';
 export const NAV_LINKS = [
     { label: 'Home', href: '/' },
     { label: 'About Us', href: '/about' },
-    { label: 'Products', href: '/product' },
+    { label: 'Products', href: '/products' },
     { label: 'Contact', href: '/contact' },
 ];
 

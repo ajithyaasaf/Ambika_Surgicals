@@ -38,7 +38,7 @@ export default function DoctorTestimonial() {
                         </h2>
 
                         <p className="text-lg text-gray-600 leading-relaxed">
-                            "Quality is non-negotiable in surgery. Ambika Surgicals consistently delivers the sterility and absorbency standards we need for patient safety. Their cotton products are among the best I've used."
+                            &ldquo;Quality is non-negotiable in surgery. Ambika Surgicals consistently delivers the sterility and absorbency standards we need for patient safety. Their cotton products are among the best I&apos;ve used.&rdquo;
                         </p>
 
                         <div className="flex items-center gap-4 pt-4 border-t border-gray-100">

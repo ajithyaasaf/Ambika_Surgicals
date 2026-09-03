@@ -4,6 +4,7 @@ import { Container } from '@/components/ui/container';
 import { ShieldCheck, Factory, HeartPulse } from 'lucide-react';
 import { COMPANY_INFO, SITE_NAME } from '@/lib/constants';
 import FadeIn, { StaggerContainer, FadeInItem } from '@/components/animations/FadeIn';
+import CallToAction from '@/components/sections/CallToAction';
 
 export const metadata: Metadata = {
     title: 'About Us - Manufacturing Excellence Since 2010',
@@ -167,6 +168,12 @@ export default function AboutPage() {
                     </StaggerContainer>
                 </Container>
             </section>
+
+            {/* Bottom Call to Action */}
+            <CallToAction
+                title="Looking for a Trusted Surgical Dressing Partner?"
+                description="Join hundreds of hospitals, healthcare networks, and surgical distributors who rely on Ambika Surgicals for pure cotton, strictly sterilized medical supplies."
+            />
         </div>
     );
 }

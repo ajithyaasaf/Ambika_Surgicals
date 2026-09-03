@@ -4,7 +4,7 @@ import * as React from 'react';
 import { useFormStatus } from 'react-dom';
 import { submitContactForm, submitQuoteRequest } from '@/app/actions/contact';
 import { Button } from '@/components/ui/button';
-import { Loader2, CheckCircle2, XCircle } from 'lucide-react';
+import { CheckCircle2, XCircle } from 'lucide-react';
 
 interface ContactFormProps {
     isQuoteRequest?: boolean;
@@ -18,17 +18,17 @@ function SubmitButton({ isQuote }: { isQuote?: boolean }) {
     return (
         <Button
             type="submit"
-            className="w-full"
+            className="w-full py-6 font-bold shadow-md text-base"
             disabled={pending}
             isLoading={pending}
         >
-            {pending ? 'Sending...' : (isQuote ? 'Submit Quote Request' : 'Send Message')}
+            {pending ? 'Submitting Quote Request...' : (isQuote ? 'Submit Official Quote Request' : 'Send Message')}
         </Button>
     );
 }
 
 export default function ContactForm({ isQuoteRequest = false, productItems = [], onSuccess }: ContactFormProps) {
-    const [startTime] = React.useState(Date.now());
+    const [startTime] = React.useState(() => Date.now());
     const [state, setState] = React.useState<{
         success?: boolean;
         message?: string;
@@ -96,7 +96,7 @@ export default function ContactForm({ isQuoteRequest = false, productItems = [],
             {/* Company Field */}
             <div>
                 <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
-                    Company Name <span className="text-red-500">*</span>
+                    {isQuoteRequest ? 'Hospital / Clinic / Company Name' : 'Company Name'} <span className="text-red-500">*</span>
                 </label>
                 <input
                     type="text"
@@ -104,7 +104,7 @@ export default function ContactForm({ isQuoteRequest = false, productItems = [],
                     name="company"
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                    placeholder="Enter company name"
+                    placeholder={isQuoteRequest ? "e.g., City Hospital, Care Clinic, or Self" : "Enter company name"}
                 />
                 {state.errors?.company && (
                     <p className="text-red-600 text-xs mt-1">{state.errors.company[0]}</p>
@@ -150,15 +150,19 @@ export default function ContactForm({ isQuoteRequest = false, productItems = [],
             {/* Message Field */}
             <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Message <span className="text-red-500">*</span>
+                    {isQuoteRequest ? 'Additional Requirements (Optional)' : <>Message <span className="text-red-500">*</span></>}
                 </label>
                 <textarea
                     id="message"
                     name="message"
-                    rows={4}
-                    required
+                    rows={isQuoteRequest ? 3 : 4}
+                    required={!isQuoteRequest}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
-                    placeholder="Enter your message"
+                    placeholder={
+                        isQuoteRequest
+                            ? "Any specific packaging, custom sizes, or delivery urgency? (Optional)"
+                            : "Enter your message"
+                    }
                 />
                 {state.errors?.message && (
                     <p className="text-red-600 text-xs mt-1">{state.errors.message[0]}</p>

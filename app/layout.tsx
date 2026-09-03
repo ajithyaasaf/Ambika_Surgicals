@@ -7,6 +7,7 @@ import Footer from '../components/layout/Footer';
 import { CartProvider } from '@/lib/context/CartContext';
 import WhatsAppFloat from '@/components/ui/WhatsAppFloat';
 import CartDrawer from '@/components/cart/CartDrawer';
+import MobileQuoteBar from '@/components/cart/MobileQuoteBar';
 import TestimonialVideoModal from '@/components/ui/TestimonialVideoModal';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
@@ -74,6 +75,7 @@ export default function RootLayout({
           <Footer />
           <WhatsAppFloat />
           <CartDrawer />
+          <MobileQuoteBar />
           <TestimonialVideoModal />
         </CartProvider>
       </body>

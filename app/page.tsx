@@ -5,6 +5,7 @@ import TrustStats from '@/components/sections/TrustStats';
 import CategoryOverview from '@/components/sections/CategoryOverview';
 import DoctorTestimonial from '@/components/sections/DoctorTestimonial';
 import BuyerValue from '@/components/sections/BuyerValue';
+import CallToAction from '@/components/sections/CallToAction';
 
 export const metadata: Metadata = {
   title: 'Ambika Surgicals | Surgical Dressing Material Manufacturer India',
@@ -20,6 +21,7 @@ export default function Home() {
       <CategoryOverview />
       <DoctorTestimonial />
       <BuyerValue />
+      <CallToAction />
     </>
   );
 }

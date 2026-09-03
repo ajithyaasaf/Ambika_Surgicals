@@ -1,6 +1,6 @@
 'use server';
 
-import { contactFormSchema, type ActionResponse } from '@/lib/validations';
+import { contactFormSchema, quoteFormSchema, type ActionResponse } from '@/lib/validations';
 import { db } from '@/lib/firebase/config';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
@@ -130,7 +130,7 @@ export async function submitQuoteRequest(
             message: formData.get('message'),
         };
 
-        const validatedData = contactFormSchema.parse(rawData);
+        const validatedData = quoteFormSchema.parse(rawData);
 
         // Store in Firestore
         await addDoc(collection(db, 'contact_submissions'), {

@@ -42,10 +42,10 @@ export default function Header() {
                     : "bg-white border-b border-transparent"
             )}
         >
-            <Container className="flex h-28 items-center justify-between">
+            <Container className="flex h-20 md:h-28 items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex items-center group">
-                    <div className="relative h-28 w-72 transition-transform duration-300 group-hover:scale-105">
+                    <div className="relative h-14 w-44 sm:h-16 sm:w-56 md:h-24 md:w-72 transition-transform duration-300 group-hover:scale-105">
                         <Image
                             src="/images/Logo.png"
                             alt={SITE_NAME}
@@ -105,19 +105,36 @@ export default function Header() {
                     </div>
                 </nav>
 
-                {/* Mobile Menu Toggle */}
-                <button
-                    className="md:hidden p-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-colors"
-                    onClick={toggleMenu}
-                    aria-label="Toggle menu"
-                >
-                    {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-                </button>
+                {/* Mobile Actions (Cart Icon + Hamburger Menu Toggle) */}
+                <div className="flex items-center gap-2 md:hidden">
+                    {/* Mobile Cart Button */}
+                    <button
+                        onClick={openCart}
+                        className="relative p-2 text-gray-700 hover:text-primary hover:bg-gray-100 rounded-full transition-colors"
+                        aria-label={`View quote cart (${itemCount} items)`}
+                    >
+                        <ShoppingCart className="h-6 w-6" />
+                        {itemCount > 0 && (
+                            <span className="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-md animate-in zoom-in">
+                                {itemCount}
+                            </span>
+                        )}
+                    </button>
+
+                    {/* Mobile Menu Toggle */}
+                    <button
+                        className="p-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+                        onClick={toggleMenu}
+                        aria-label="Toggle menu"
+                    >
+                        {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                    </button>
+                </div>
             </Container>
 
             {/* Mobile Navigation */}
             <div className={cn(
-                "md:hidden absolute top-20 left-0 w-full bg-white border-b shadow-xl transition-all duration-300 ease-in-out origin-top",
+                "md:hidden absolute top-full left-0 w-full bg-white border-b shadow-xl transition-all duration-300 ease-in-out origin-top",
                 isMenuOpen ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0 pointer-events-none"
             )}>
                 <Container className="py-6 flex flex-col space-y-2">
