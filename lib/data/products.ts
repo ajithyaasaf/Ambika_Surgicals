@@ -62,10 +62,10 @@ export const PRODUCTS: Product[] = [
     {
         id: 'p3',
         slug: 'gamjee-pad-roll',
-        name: 'Gamjee Pad/Roll',
+        name: 'Gamjee Roll',
         category: 'sterile-non-sterile',
-        description: 'Discover our premium dressing pads, made from medical-grade cotton for versatile, disposable surgical use, offering unmatched quality and performance.',
-        shortDescription: 'Versatile disposable dressing pads for surgical use.',
+        description: 'Discover our premium Gamjee rolls, made from medical-grade cotton for versatile surgical and dressing use, offering unmatched quality and performance.',
+        shortDescription: 'Versatile disposable Gamjee rolls for medical use.',
         specs: {
             'Size': '10cm x 2m, 10cm x 3m, 15cm x 2m, 15cm x 3m',
             'GSM': '300, 400, 500',
@@ -147,51 +147,6 @@ export const PRODUCTS: Product[] = [
         ],
         features: ['Easy unwinding', 'Smooth edges', 'Chemical-free'],
         imageUrl: '/images/products/5. GAUZE CLOTH-A.jpeg'
-    },
-    {
-        id: 'p6',
-        slug: 'jumbo-roll',
-        name: 'Jumbo Roll',
-        category: 'bandages',
-        description: 'Our Gauze & Bandage Jumbo Rolls provide superior absorbency, comfort, and protection, available in various sizes with customization options.',
-        shortDescription: 'Large format gauze rolls for bulk applications.',
-        specs: {
-            'Size': '100cm, 120cm',
-            'Length': 'Above 1000 meters',
-            'Material': '100% Cotton Gauze',
-            'Application': 'Bulk medical use',
-            'Customization': 'Available'
-        },
-        benefits: [
-            'Extended length reduces frequent roll changes',
-            'Cost-effective for high-volume medical facilities',
-            'Superior absorbency maintains wound care standards'
-        ],
-        features: ['1000+ meters length', 'Bulk packaging', 'Cost-effective'],
-        imageUrl: '/images/products/6. JUMBO ROLL.jpeg'
-    },
-    {
-        id: 'p14',
-        slug: 'bandage-cloth',
-        name: 'Bandage Cloth',
-        category: 'bandages',
-        description: 'Our premium Bandage Cloth is crafted from high-quality cotton, offering exceptional breathability and durability. It is soft on the skin and versatile for various medical dressing needs.',
-        shortDescription: 'Versatile and breathable cotton bandage cloth.',
-        specs: {
-            'Material': '100% Cotton',
-            'Weave': 'Standard medical weave',
-            'Texture': 'Soft & Durable',
-            'Breathability': 'High',
-            'Application': 'General wound dressing'
-        },
-        benefits: [
-            'Soft texture prevents skin irritation during prolonged use',
-            'High breathability promotes faster healing of covered areas',
-            'Durable fabric ensures secure dressing application'
-        ],
-        features: ['100% Cotton', 'High breathability', 'Soft texture'],
-        imageUrl: '/images/products/14. BANDAGE CLOTH.jpeg',
-        imageAspectRatio: 'aspect-[4/3]'
     },
     {
         id: 'p7',
@@ -324,6 +279,28 @@ export const PRODUCTS: Product[] = [
         ],
         features: ['AAMI Level 2', 'Multiple sizes', 'Medical grade'],
         imageUrl: '/images/products/12. patient gown & surgeon gown.jpeg'
+    },
+    {
+        id: 'p6',
+        slug: 'jumbo-roll',
+        name: 'Jumbo Roll',
+        category: 'bandages',
+        description: 'Our Gauze & Bandage Jumbo Rolls provide superior absorbency, comfort, and protection, available in various sizes with customization options.',
+        shortDescription: 'Large format gauze rolls for bulk applications.',
+        specs: {
+            'Size': '100cm, 120cm',
+            'Length': 'Above 1000 meters',
+            'Material': '100% Cotton Gauze',
+            'Application': 'Bulk medical use',
+            'Customization': 'Available'
+        },
+        benefits: [
+            'Extended length reduces frequent roll changes',
+            'Cost-effective for high-volume medical facilities',
+            'Superior absorbency maintains wound care standards'
+        ],
+        features: ['1000+ meters length', 'Bulk packaging', 'Cost-effective'],
+        imageUrl: '/images/products/6. JUMBO ROLL.jpeg'
     },
 
 ];
