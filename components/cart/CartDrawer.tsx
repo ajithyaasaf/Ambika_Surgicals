@@ -9,6 +9,7 @@ import { FaWhatsapp } from 'react-icons/fa6';
 import { useCart } from '@/lib/context/CartContext';
 import { Button } from '@/components/ui/button';
 import { COMPANY_INFO } from '@/lib/constants';
+import { getCategoryLabel } from '@/lib/data/products';
 
 export default function CartDrawer() {
     const { isOpen, closeCart, items, removeItem, updateQuantity, itemCount } = useCart();
@@ -112,6 +113,13 @@ export default function CartDrawer() {
                                         <p className="font-medium text-gray-700 mb-2">Popular Categories:</p>
                                         <div className="flex flex-wrap justify-center gap-2">
                                             <Link
+                                                href="/products?category=sterile-non-sterile"
+                                                onClick={closeCart}
+                                                className="px-3 py-1 bg-gray-100 hover:bg-primary/10 hover:text-primary rounded-full transition-colors"
+                                            >
+                                                Sterile & Non Sterile
+                                            </Link>
+                                            <Link
                                                 href="/products?category=sterile-dressing"
                                                 onClick={closeCart}
                                                 className="px-3 py-1 bg-gray-100 hover:bg-primary/10 hover:text-primary rounded-full transition-colors"
@@ -163,7 +171,7 @@ export default function CartDrawer() {
                                                         </Link>
                                                     </h3>
                                                     <span className="text-xs text-gray-500 capitalize mt-0.5 block">
-                                                        {item.category.replace('-', ' ')}
+                                                        {getCategoryLabel(item.category)}
                                                     </span>
                                                 </div>
 

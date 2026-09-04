@@ -11,6 +11,7 @@ import { FaWhatsapp } from 'react-icons/fa6';
 import ContactForm from '@/components/forms/ContactForm';
 import FadeIn, { StaggerContainer, FadeInItem } from '@/components/animations/FadeIn';
 import { COMPANY_INFO } from '@/lib/constants';
+import { getCategoryLabel } from '@/lib/data/products';
 
 export default function InquiryPage() {
     const { items, removeItem, updateQuantity, clearCart } = useCart();
@@ -132,7 +133,7 @@ export default function InquiryPage() {
                                                     </Link>
                                                     <p className="text-xs text-gray-500 line-clamp-1">{item.shortDescription}</p>
                                                     <span className="inline-block mt-1 text-[11px] font-semibold text-primary capitalize bg-primary/5 px-2 py-0.5 rounded">
-                                                        {item.category.replace('-', ' ')}
+                                                        {getCategoryLabel(item.category)}
                                                     </span>
                                                 </div>
                                             </div>

@@ -3,7 +3,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Product } from '@/lib/data/products';
+import { Product, getCategoryLabel } from '@/lib/data/products';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { useCart } from '@/lib/context/CartContext';
 import { Check, Minus, Plus } from 'lucide-react';
@@ -47,7 +47,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                 {/* Category Badge */}
                 <div className="absolute top-2 left-2 sm:top-3 sm:left-3 z-10">
                     <span className="bg-white/90 backdrop-blur text-navy text-[9px] sm:text-xs font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md sm:rounded-full uppercase tracking-wider shadow-xs">
-                        {product.category.replace('-', ' ')}
+                        {getCategoryLabel(product.category)}
                     </span>
                 </div>
 

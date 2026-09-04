@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, ShieldCheck, FileCheck, Truck, Award, ChevronRight } from 'lucide-react';
-import { PRODUCTS } from '@/lib/data/products';
+import { PRODUCTS, getCategoryLabel } from '@/lib/data/products';
 import { Container } from '@/components/ui/container';
 import { buttonVariants } from '@/components/ui/button';
 import { SITE_NAME } from '@/lib/constants';
@@ -153,7 +153,7 @@ export default async function ProductDetailPage({ params }: Props) {
                             {/* Category Badge */}
                             <FadeIn delay={0.1}>
                                 <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-bold rounded-full uppercase tracking-wider border border-primary/20">
-                                    {product.category.replace('-', ' ')}
+                                    {getCategoryLabel(product.category)}
                                 </span>
                             </FadeIn>
 

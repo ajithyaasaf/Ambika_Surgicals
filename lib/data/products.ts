@@ -1,4 +1,4 @@
-export type ProductCategory = 'sterile-dressing' | 'bandages' | 'cotton-products' | 'medical-kits' | 'protective-wear';
+export type ProductCategory = 'sterile-non-sterile' | 'sterile-dressing' | 'bandages' | 'cotton-products' | 'medical-kits' | 'protective-wear';
 
 export interface Product {
     id: string;
@@ -18,8 +18,8 @@ export const PRODUCTS: Product[] = [
     {
         id: 'p1',
         slug: 'gauze-swabs',
-        name: 'Gauze Swabs (Sterile & Non Sterile)',
-        category: 'sterile-dressing',
+        name: 'Gauze Swabs',
+        category: 'sterile-non-sterile',
         description: 'We are a leading manufacturer and supplier of Gauze Swabs, known for our high-quality surgical bandages and dressings that strictly adhere to medical industry guidelines and norms.',
         shortDescription: 'High-quality surgical gauze swabs for medical use.',
         specs: {
@@ -40,9 +40,9 @@ export const PRODUCTS: Product[] = [
     {
         id: 'p2',
         slug: 'mopping-pad',
-        name: 'Mopping Pad (Sterile & Non Sterile)',
-        category: 'sterile-dressing',
-        description: 'Explore our premium X-Ray opaque thread, designed for superior absorption and durability. Mainly used in surgery to avoid h uge loss of blood.',
+        name: 'Mopping Pad',
+        category: 'sterile-non-sterile',
+        description: 'Explore our premium X-Ray opaque thread, designed for superior absorption and durability. Mainly used in surgery to avoid huge loss of blood.',
         shortDescription: 'Premium X-Ray opaque surgical mopping pads.',
         specs: {
             'Size': '20cm x 20cm, 25cm x 25cm, 30cm x 30cm',
@@ -62,8 +62,8 @@ export const PRODUCTS: Product[] = [
     {
         id: 'p3',
         slug: 'gamjee-pad-roll',
-        name: 'Gamjee Pad/Roll (Sterile & Non Sterile)',
-        category: 'sterile-dressing',
+        name: 'Gamjee Pad/Roll',
+        category: 'sterile-non-sterile',
         description: 'Discover our premium dressing pads, made from medical-grade cotton for versatile, disposable surgical use, offering unmatched quality and performance.',
         shortDescription: 'Versatile disposable dressing pads for surgical use.',
         specs: {
@@ -84,9 +84,9 @@ export const PRODUCTS: Product[] = [
     {
         id: 'p13',
         slug: 'dressing-pad',
-        name: 'Dressing Pad (Sterile)',
+        name: 'Dressing Pad',
         category: 'sterile-dressing',
-        description: 'Our sterile Dressing Pads are manufactured from premium 100% cotton, designed for superior absorbency and protection of wound sites. These pads are EO sterilized to ensure maximum safety and infection control.',
+        description: 'Our Dressing Pads are manufactured from premium 100% cotton, designed for superior absorbency and protection of wound sites. These pads are EO sterilized to ensure maximum safety and infection control.',
         shortDescription: 'Sterile high-absorbency cotton dressing pads.',
         specs: {
             'Material': '100% Cotton',
@@ -329,9 +329,15 @@ export const PRODUCTS: Product[] = [
 ];
 
 export const CATEGORIES: { id: ProductCategory; label: string }[] = [
+    { id: 'sterile-non-sterile', label: 'Sterile & Non Sterile' },
     { id: 'sterile-dressing', label: 'Sterile Dressing' },
     { id: 'bandages', label: 'Bandages & Cloth' },
     { id: 'cotton-products', label: 'Cotton Products' },
     { id: 'medical-kits', label: 'Medical Kits' },
     { id: 'protective-wear', label: 'Protective Wear' },
 ];
+
+export function getCategoryLabel(category: ProductCategory | string): string {
+    const found = CATEGORIES.find(c => c.id === category);
+    return found ? found.label : category.replace(/-/g, ' ');
+}
