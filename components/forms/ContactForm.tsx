@@ -150,7 +150,7 @@ export default function ContactForm({ isQuoteRequest = false, productItems = [],
             {/* Location Field */}
             <div>
                 <label htmlFor="location" className="block text-sm font-medium text-gray-700 mb-1">
-                    Location (City / State / Country) <span className="text-red-500">*</span>
+                    Location <span className="text-red-500">*</span>
                 </label>
                 <input
                     type="text"
@@ -158,7 +158,7 @@ export default function ContactForm({ isQuoteRequest = false, productItems = [],
                     name="location"
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                    placeholder="e.g., Chennai, Tamil Nadu or Country"
+                    placeholder="e.g., Chennai, Madurai"
                 />
                 {state.errors?.location && (
                     <p className="text-red-600 text-xs mt-1">{state.errors.location[0]}</p>
