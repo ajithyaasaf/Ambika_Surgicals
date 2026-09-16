@@ -10,6 +10,7 @@ interface Submission {
     email: string;
     phone?: string;
     company?: string;
+    location?: string;
     message?: string;
     status: 'new' | 'read' | 'replied';
     timestamp: any;
@@ -50,6 +51,7 @@ export function exportToExcel(submissions: Submission[]) {
             'Status': sub.status.toUpperCase(),
             'Name': sub.name,
             'Company': sub.company || 'N/A',
+            'Location': sub.location || 'N/A',
             'Email': sub.email,
             'Phone': sub.phone || 'N/A',
             'Message': sub.message || '',
@@ -70,6 +72,7 @@ export function exportToExcel(submissions: Submission[]) {
         { wch: 10 }, // Status
         { wch: 20 }, // Name
         { wch: 25 }, // Company
+        { wch: 20 }, // Location
         { wch: 30 }, // Email
         { wch: 15 }, // Phone
         { wch: 50 }, // Message

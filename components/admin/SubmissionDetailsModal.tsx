@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { X, User, Building2, Mail, Phone, MessageSquare, Package, Calendar } from 'lucide-react';
+import { X, User, Building2, MapPin, Mail, Phone, MessageSquare, Package, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { format } from 'date-fns';
 import { PRODUCTS } from '@/lib/data/products';
@@ -12,6 +12,7 @@ interface Submission {
     email: string;
     phone?: string;
     company?: string;
+    location?: string;
     message?: string;
     status: 'new' | 'read' | 'replied';
     timestamp: any;
@@ -94,6 +95,16 @@ export default function SubmissionDetailsModal({ submission, isOpen, onClose }: 
                                     <div>
                                         <div className="text-xs text-gray-500 mb-1">Company</div>
                                         <div className="font-semibold text-navy">{submission.company}</div>
+                                    </div>
+                                </div>
+                            )}
+
+                            {submission.location && (
+                                <div className="flex items-start gap-3">
+                                    <MapPin className="w-5 h-5 text-gray-400 mt-0.5" />
+                                    <div>
+                                        <div className="text-xs text-gray-500 mb-1">Location</div>
+                                        <div className="font-semibold text-navy">{submission.location}</div>
                                     </div>
                                 </div>
                             )}

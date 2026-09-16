@@ -6,6 +6,7 @@ export const contactFormSchema = z.object({
     company: z.string().min(2, 'Company name is required').max(100),
     email: z.string().email('Invalid email address'),
     phone: z.string().min(10, 'Phone number must be at least 10 digits').max(15),
+    location: z.string().min(2, 'Location is required').max(100),
     message: z.string().min(10, 'Message must be at least 10 characters').max(1000),
 });
 
@@ -17,6 +18,7 @@ export const quoteFormSchema = z.object({
     company: z.string().min(2, 'Hospital / Company name is required').max(100),
     email: z.string().email('Invalid email address'),
     phone: z.string().min(10, 'Phone number must be at least 10 digits').max(15),
+    location: z.string().min(2, 'Location is required').max(100),
     message: z.string().max(1000).optional().transform((val) => val || ''),
 });
 

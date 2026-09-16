@@ -41,6 +41,7 @@ export async function submitContactForm(formData: FormData): Promise<ActionRespo
             company: formData.get('company'),
             email: formData.get('email'),
             phone: formData.get('phone'),
+            location: formData.get('location'),
             message: formData.get('message'),
         };
 
@@ -127,6 +128,7 @@ export async function submitQuoteRequest(
             company: formData.get('company'),
             email: formData.get('email'),
             phone: formData.get('phone'),
+            location: formData.get('location'),
             message: formData.get('message'),
         };
 

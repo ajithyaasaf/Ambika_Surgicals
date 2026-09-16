@@ -18,6 +18,7 @@ interface Submission {
     email: string;
     phone?: string;
     company?: string;
+    location?: string;
     message?: string;
     status: 'new' | 'read' | 'replied';
     timestamp: any; // Date or timestamp string
@@ -40,7 +41,8 @@ export default function SubmissionTable({ initialSubmissions }: { initialSubmiss
     const filteredSubmissions = initialSubmissions.filter(sub =>
         sub.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         sub.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        sub.company?.toLowerCase().includes(searchTerm.toLowerCase())
+        sub.company?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        sub.location?.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     // Calculate pagination
@@ -174,6 +176,11 @@ export default function SubmissionTable({ initialSubmissions }: { initialSubmiss
                                         {sub.company && (
                                             <div className="text-sm text-gray-500 font-medium mt-0.5 flex items-center gap-1">
                                                 🏢 {sub.company}
+                                            </div>
+                                        )}
+                                        {sub.location && (
+                                            <div className="text-xs text-gray-500 mt-0.5 flex items-center gap-1">
+                                                📍 {sub.location}
                                             </div>
                                         )}
                                         {sub.phone && (
